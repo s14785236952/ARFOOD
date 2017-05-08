@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\e110f783ae0beb05a0e4a68732c3bceba20add27\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_970120a9ff86bbb9c48273277a783d5a971d7a9b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_56cb9135bf1bd704eeaa78bb7e1de36312cfdd96\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\3509864fdec472dc56effbf3a4239243e347b144\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_51e8f52cc9b947651a725c83bec9b04ea7000f2d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\6b9fa1f49d5744a1c2ec2103b314ead05796cbae\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_3d78c25cbe98a946e169896bf8e2271bcfea8193\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\e110f783ae0beb05a0e4a68732c3bceba20add27\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_970120a9ff86bbb9c48273277a783d5a971d7a9b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\df6d3cd9810f03b64cc856116819bdcc66a934a1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="535d4497b5fa5d451e07a043e9e220d5c25ab7c7">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_083adb5edbb2ca03e2a3f503deaf4045c533974c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\c5a59a2dce14b4861b4731daae80d4af9ae40549\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_acce01c66a1d3972fd1b50226bb260d967aaeef7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\c3ba4ae4d3b86c18cacda7c7f7210465f438315f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0595e77431edaba6793410f9bfa3603c063c58e7">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_84eb4d8babc2695912c1113ca48a9bc03ba852d3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\2ab94b6ca1fa953e2a52db17c043b7824a791dd3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f56a68df45e18ce77814db6553fdaa229308f49b">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4400f2b04f7d88ad93ae203aba10e6dfb551a5d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\6b9fa1f49d5744a1c2ec2103b314ead05796cbae\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_3d78c25cbe98a946e169896bf8e2271bcfea8193.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\3509864fdec472dc56effbf3a4239243e347b144\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_51e8f52cc9b947651a725c83bec9b04ea7000f2d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\d341e503338584ac75154171aebc166156b00bdc\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_2f271244ae279d57e7e9c11377b98b60a12a781b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\82dbac87e9cdfd216212309da88235f15b2734f2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="982031d2aa9652bc955d0b581ec70378c0adfc56">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50fa0bfaa7e141d3f033e8073ccdc5fe0d0500a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\d341e503338584ac75154171aebc166156b00bdc\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_2f271244ae279d57e7e9c11377b98b60a12a781b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\e110f783ae0beb05a0e4a68732c3bceba20add27\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_c39e80dc23e1d9be4bb4e47a71c4a4a7e66323b7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\e63796ff3d6121c793cfceb1c0f06c41a3b967f3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f134dce4c4aec6bd5a0067bb991a15b9c2a7be65\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\3f84f4352d734876a67016fda8a6f8273b03f5c8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbb50f7f89342c915898c9376a67229e2fcee286">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eb0043ec5e339dfaedb16268d20faca2fda5c1e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_ccebb9545c5da1b53c1ebc75ec0fe8296f782e8e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\76cceec679c9c8f36ae824a7c6c11ca2f7ee372a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="163b095362fd14d682ac311bf672c2fb54de5078">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dc65ef3c17a9e658c3625041581c984071f0fa65\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\e63796ff3d6121c793cfceb1c0f06c41a3b967f3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_f134dce4c4aec6bd5a0067bb991a15b9c2a7be65.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\4ddf2bc5c571e02570936a71148b29f38f7e6d6b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7c39a4b431976abc46d3cf6344c75d06c769cd35">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e83457a20674d891481f0a16579cb7087e2ec2ad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\02f426b587d09adfda0f27fac5bb76676f8f3302\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="be009dbe07b3a252c8cda07fc948ac713d2f5171">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d5d495f4f5eb5b3067c1496898defe89ea523fd0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\ab2cf6154a86149606c7eff1110833a6a0d89034\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a06eb7761fca120bbb46b34b930a3a3462ba9d7f">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_874bb2213b0d96ef5ccdf69b25ea7ba71feb9864\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\d8e92d4a326219c7ed613e6a06eac0a81ac3f499\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a0712565a784bedd07ada2393c95e0b1e288840f">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_87cc157d8a97a6544ba063a25d8b3edb93b78693\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\083b2e0195f40e52666635efd71967ba235b15b1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e91e1f335dc418d0138991a1d5155f0490ab6082">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_677fbe50108a4c9c860b1536ef4e0700883ca7a4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\5892dc412840add681b91fb53e4371e1e57d474e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd7676ac12aa6653718b7ea33d93ce9d6915d526">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_29ed0e643a40e3346e2e5fb18daed8d9d73cbc4e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\41cb1f1597972f6c16cb90cc40b843cacac14fd7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_b5287e3afab83d0f5d054d72020c8e90b2f766c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\e110f783ae0beb05a0e4a68732c3bceba20add27\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_c39e80dc23e1d9be4bb4e47a71c4a4a7e66323b7.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\8f8c848656b0a90d17c45e89da7070b5b8f5fbfe\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fb3475af18f571fb67878c5b366e890c86c25cba\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\5d0e97609b3f4159c47d9de49604a0bdfc7402f9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30489a97b06cc3945bdbcc1770089af9e3b3b64d">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eb42c4a15f6d834ea285de84b74ce8332ec04ebc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\25e20cef8c259ad1d050d999a96a28e4c9cc5fd8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_617752d84d22379091f6fb8509fd46f1f9a45293\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\17d65e2b2fd36e7716724986bb27d578aa1ddff3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="33203b081101ca6242a4cd746aafe5fc2dd98a34">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0a81c0c9bbfbe516d616c1d99b6f5e45b7fb39cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\f6b6d458fc8d4795bad876616f607762652907d5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="811202a9098047576814fc2171b56b83b537a8b9">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c2ab1846a7425813640d7c218e4a62f7897a9b19\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\341cc90b945ed9cc54aeb92c19128a166dde0bf9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="08cdd337d1d9247eb915f0ab365624dd7966e7fa">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2be1e74c03195bcc2a9ad459689f2cbea69e387e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\25e20cef8c259ad1d050d999a96a28e4c9cc5fd8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_617752d84d22379091f6fb8509fd46f1f9a45293.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\2e3e67f4cf4f3e1498c6ee403d315bb5a4e0a690\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8ec9ae00d45e758ac5b7a1c5dc0daa8a4b24280f">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_350447f8852b9c9781ad6b8dc5ce07df5a47d6e3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\41cb1f1597972f6c16cb90cc40b843cacac14fd7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5287e3afab83d0f5d054d72020c8e90b2f766c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\e9463edbe024dcb91b5a1c89947e9e5afd9d1fef\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a7bf6c640f60f8cd2054f0e6018cd88383bdf467\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\b2d451a30458d8d7c2d63d67d3aed0911a705c0a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dc4c18602ecffb3e69cda6cdc51ba4feac0f97d7">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_656a098ae0faffdee30800838c0db7595ca8cf42\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\b7a20b40897d952e4a8fd374d43c403593c221f8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="18e52280643effbab30370b073e456d670a0db54">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c154f91aa6073ae6cae904750584563c866fffae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\32bf4660c3c0059296cf674eb80b6be948ef7cf3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_33ea4805cc03a8403dd7dd91f1dcc9c473a310dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\457ee004e6175228e67b5ea78c2569ed9946d5ad\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_167c6aa5b6880afe80f774ccb93a67ba42270d3a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\6b9fa1f49d5744a1c2ec2103b314ead05796cbae\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_3a59773ac43aed847db856f7b49dcd2d5a0b643b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\a45ad5dacb65012a3b768d788ebcb11effc3438a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e3f200938bb888d83c2da807cb6aee983baae254">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b8e0a056a47305a52a963e7254bc8920681c38d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.0\5c06d197fb7fa875ad452f562e3310dd9949d066\retrofit-2.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5c06d197fb7fa875ad452f562e3310dd9949d066">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.0_2119d64920c417354f3850ae6a0332632bfa5c9e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\095f8c6f68c289fb0de62180287e22b169777e1b\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_971e1eb8c902bf982c0453d30f3e4fa2e09640b2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\ef4700f5df60234463576a2e4833713a204511ef\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e791f7f2fbf9ca5b3b576916533f844dfb384024">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_70aae002166c5e05a1caddc87954b3b342bbb6e4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\4e946799f578ffc8ad2ec44850ba85c25bf398cf\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fb527eb3069d8a4af862d7e64c3ff8152c4aa698\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\0bbedc58afee40114faedcdf08f6551aece1f74b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5acfd484717d9175c175569a114d46dbeec074ed">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_39e98f43f1e5bb9fc3a76cd4220a0f18b14f4af3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\32bf4660c3c0059296cf674eb80b6be948ef7cf3\output\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_bf7afa35999c146df222391c79d38bfa0951a0ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\d73b1b97a06899e117f4ae1f4db78dba28611e12\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="299e04800d1169b9f3dd04c376c7b266a3594cca">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fb533f3a4483354443d50a796a0564e6520b700d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\d341e503338584ac75154171aebc166156b00bdc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7ffdcad5e86c8cdb56bac090eff1efe8b27a8da3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\829983a1c5685435464ebc96663f418ef5397a9d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="33b5900f82d19fd3dacee518363b249ace77b8f5">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_79b8093a2c5f7513abfea78d9e66b5691726871e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\4e946799f578ffc8ad2ec44850ba85c25bf398cf\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_fb527eb3069d8a4af862d7e64c3ff8152c4aa698.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\095f8c6f68c289fb0de62180287e22b169777e1b\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_971e1eb8c902bf982c0453d30f3e4fa2e09640b2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\b122329f6c3765f3952f52af63e1414120cadc9c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fb15fd9774b5c51dcb39d8e6fa1b6f06bcd1cd34">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_433ac7b8a864f733b8543dba2ab0afa0c4a68c6d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\9525ca00d3c5f6d41de6779c3655bbe648ef99d1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="39261f58509b1a379df041f03da394c29da05395">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_62dfd31c7f6091c9c8600cd429bab6bc1167fffa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\457ee004e6175228e67b5ea78c2569ed9946d5ad\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_167c6aa5b6880afe80f774ccb93a67ba42270d3a\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\d341e503338584ac75154171aebc166156b00bdc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_7ffdcad5e86c8cdb56bac090eff1efe8b27a8da3.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\c1f27258a1b27ab2641651143854c5467efa656f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7378806b630886994099d03c369983f2848a609f">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7e73407c04afa0a1d08fec2828d19fbb680f6d74\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\6b9fa1f49d5744a1c2ec2103b314ead05796cbae\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3a59773ac43aed847db856f7b49dcd2d5a0b643b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\9558c2658f8a22f17844fce02169398680ba994b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a378adc3106cb3560ab3dfed05f1fda26cff5b49">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bad745f4b94b741a174617841284616872d90b13\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_5238579494918095f6fc6011657cd4d401286e17\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\166fcd878b99bd821411043ea476d4de481bdf7d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ce9432b50a02be101bc491a1b38d3904200bd988">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_14ad5745f76d19bfb20436bd0144c48056316073\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\738d8bcebfe516b8febb45899503d010e2473a6b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4838df6db988160b107e954e02a745370df543b6">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_86d18a4d521d29008d035fd9d711de9f18aae08c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\129ece42a63439bc1ffe25006091d7b8c95eb125\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="21bb89120d84fa29afeb0f9c0ebf415bc3b45a7e">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7f45340e73228b7fc1f8c170dd542f48566a443b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_016fb16434c999657551c94841601c792b75ec81\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\1c7e6a5aac22220b0d8b71e07b1a5fc41075f84d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_fca7b021b272cd9d028a750f618430f2ddd46023.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\1c7e6a5aac22220b0d8b71e07b1a5fc41075f84d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fca7b021b272cd9d028a750f618430f2ddd46023\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\13c586144e6194308d8ed511ed99229336d56a29\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1dc44c4798cbd79e95e4838a3fdc734c0e3f895f">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a91bff65b0a5085732b1dbd7fc77b072d545a331\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\6c348bf20d1c39fe11ec1b8cc67eea6775388413\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7428f0d1debdcf1b5792a26146e51a38d992d04d">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ce8459ce506567e84e7c4f95b213e3c3396cd121\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\827593ac224845c006fedb1bbab8feadaeeb57c1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f315c6b5b99081f16a79c9aaa557328a4644fe63">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ba693510c8ec6c949a91b4d517aec2d5ec1c2bcd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\4e946799f578ffc8ad2ec44850ba85c25bf398cf\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_21a1cba086e5c7713a1eea5ae03bf7135ee4b03b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\091670ae94a92ff547939c0134c563c22440e4c7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7c7c21cc7a45d5c2a57d77f4840d4d4ea3c7604f">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c3af775f2d97de4d2d151c1ddbc90621472e6e92\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.0\49eb3ad545e7701234e4dd83db8dc1344b577f23\converter-gson-2.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="49eb3ad545e7701234e4dd83db8dc1344b577f23">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.0_90b2ae0eaa7a979f4d5d3fb9804eda635daffb07\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\c5fbc764f7dee52f0e16709a0cbaf6cc10352ae6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3c8fcebabb73df25937704f5566bf6c388ea941d">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f6ca014cecd6eb49495a916d34eec1be47187c3b\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\4e946799f578ffc8ad2ec44850ba85c25bf398cf\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_21a1cba086e5c7713a1eea5ae03bf7135ee4b03b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\567a9ec3f6191f281462b003377d288896eeac23\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_36c352a10034de10a0254a4943ebe9cfc5f9507d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\a4ca77b5ba9156c5855d92bd465c0af028d6c9d5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8ad1b5663f367dac619256d75fb08a98c7baa4f4">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e90ad215121337601bbc57a9afd0ff93c762bf54\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.6.1_c8170208a1f64d9e159b6f10fd65867add9501f0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\4105cee03e8db55e2239878da46fabd944f52d2a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="404f4108b41050173f93836f5b35efdd9525a0ad">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_38d9980653462d072d66bab0a20d96d8c2b75dc0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\b0c417af63d632f870b6526f0e2947f84fef31ec\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa6c324604383981fb74c4cb036d4171ed0a9a02">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_368c64f9d5a716af22a349fecd249fd2ebdbbad0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\694e562bad15c076eed0438f2724dd711646a650\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd7b4a8e01cafa79a0b228b2ee5bd57ae5577444">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d8eda02b940368fce9e34774914238c358b33549\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\c74204fe85eabae11d84a3a47ad4aea5ba15a3e3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="74694bf98bd1f856cf478bd0c516531801badced">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c3d32734813c400f3f6c6f659364c9e650ebac08\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\7665a5aa589aaf4b8cf0f6a6a1834b325ccc1a6b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e52c74af4602fd0fa98ecf3d6c40948b4617f8d7\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\095f8c6f68c289fb0de62180287e22b169777e1b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_6df0e866e484bba607b145655a52790189fca603.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\6c6a99647feded6a19ec486120d7d1971603a410\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a03f4d605b0f29222c2ddf8b7896258cb4b92def">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c96325bb5696a56386209ef7ffd43c90b2be515c\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\7665a5aa589aaf4b8cf0f6a6a1834b325ccc1a6b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\pre-dexed\debug\classes_e52c74af4602fd0fa98ecf3d6c40948b4617f8d7.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\590e8c24a92a7922c9c3a5869e366ea2683322f4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="20ca7888c59f63d439f218a8810c88039f8bc7db">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d22cfd61050d8ba31a99f53830b4c47250b3edf7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\095f8c6f68c289fb0de62180287e22b169777e1b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6df0e866e484bba607b145655a52790189fca603\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\1e7cac74b5e61258ed7f33192be0107b44ab0d57\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b53d61bae49278c0fa202d9066d2e72fc151c1e8">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f117ef36ecb6011d953fa0eba3b3f461d65d9007\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\6015299906c57c853e64a732624925f32161a652\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7572433ba21aa9e4624c819fa738b2748b82d05">
+        <dex dex="C:\Users\user\Desktop\ARFood\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6a6f7dd0cd89f7e4d3fde30e0c2a49e4bfad1e1a\classes.dex" />
+    </item>
+
+</items>
