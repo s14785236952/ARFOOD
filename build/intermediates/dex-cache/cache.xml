@@ -3,21 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\LuoLab\Desktop\ARFOOD fragment\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        jar="C:\Users\user\ARFOOD\app\libs\universal-image-loader-1.9.5.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="c004b04d4449028b6135d15af26b5487d9e613f7">
-        <dex dex="C:\Users\LuoLab\Desktop\ARFOOD fragment\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9ba880a70c1d4e058aa4409d157dc5a6e8bc8db5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\LuoLab\Desktop\ARFOOD fragment\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\Users\LuoLab\Desktop\ARFOOD fragment\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f429225d570098ba812bbb56730a9102f8cf214b\classes.dex" />
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="C:\Users\user\ARFOOD\app\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_9c2fc8becd951d6386453f4daf943a770a774127\classes.dex" />
     </item>
 
 </items>

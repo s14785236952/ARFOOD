@@ -30,26 +30,26 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/show_cur_location_btn"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="24dp" />
+        android:layout_alignParentStart="true" />
     <Button
         android:id="@+id/show_cur_location_btn"
         android:text="@string/Show_GPS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_register"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp" />
     <Button
 
         android:id="@+id/image_grid_btn"
         android:text="顯示圖片"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
         android:layout_below="@+id/sign_out_button"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="28dp" />
+        android:layout_alignParentStart="true" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
