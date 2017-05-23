@@ -14,6 +14,9 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity  {
     private LocationManager locMan;
     private GoogleApiClient mGoogleApiClient;
     String userEmail,userDisplayName;
+    private FragmentManager manager;
+    private FragmentTransaction transaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +79,19 @@ public class MainActivity extends AppCompatActivity  {
         });
         userEmail = intent.getStringExtra("USER_EMAIL");
         userDisplayName = intent.getStringExtra("USER_NAME");
+
+        manager = getSupportFragmentManager();
+
+        findViewById(R.id.List_Btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                transaction = manager.beginTransaction();
+
+                List_Fragment fragment = new List_Fragment();
+                transaction.replace(R.id.List_layout,fragment,"asd");
+                transaction.commit();
+            }
+        });
     }
 
 

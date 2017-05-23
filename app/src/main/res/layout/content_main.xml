@@ -40,5 +40,22 @@
         android:layout_below="@+id/btn_register"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/List_Btn"
+        android:text="List"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="220dp"/>
+
+    <LinearLayout
+        android:id="@+id/List_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/List_Btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical"/>
 
 </RelativeLayout>
