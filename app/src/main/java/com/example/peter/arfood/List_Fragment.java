@@ -1,12 +1,5 @@
 package com.example.peter.arfood;
 
-
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -30,12 +23,10 @@ import static android.R.layout.simple_spinner_dropdown_item;
 import static com.example.peter.arfood.R.*;
 
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class List_Fragment extends Fragment {
-
 
     private List<String> All_List = new ArrayList<String>(Arrays.asList("Tea's", "俗又大碗", "鴨肉羹", "芋園", "阿寬", "8鍋", "布格", "好小子", "橘屋"));
     private List<String> Spinner_List = new ArrayList<String>(Arrays.asList("全部"));
@@ -47,26 +38,18 @@ public class List_Fragment extends Fragment {
     private String[] Type;
     View v;
 
-
     public List_Fragment() {
         // Required empty public constructor
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        return inflater.inflate(R.layout.fragment_list_, container, false);
-    }
-
-
         v = inflater.inflate(layout.fragment_list_,container,false);
         listView = (ListView) v.findViewById(id.List_View1);
         listAdapter = new ArrayAdapter<String>(getActivity(),simple_list_item_1,All_List);
@@ -91,21 +74,21 @@ public class List_Fragment extends Fragment {
         Dialog_EditText.setView(editText);
 
         Dialog_EditText.setTitle("類別")
-                       .setMessage("輸入類型")
-                       .setPositiveButton("確定", new DialogInterface.OnClickListener() {
-                           @Override
-                           public void onClick(DialogInterface dialogInterface, int i) {
-                               Spinner_List.add(editText.getText().toString());
-                           }
-                       })
-                       .setNegativeButton("取消",new DialogInterface.OnClickListener(){
-                            @Override
-                            public void onClick(DialogInterface dialogInterface,int arg1){
+                .setMessage("輸入類型")
+                .setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Spinner_List.add(editText.getText().toString());
+                    }
+                })
+                .setNegativeButton("取消",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialogInterface,int arg1){
 
-                            }
-                        })
-                       .create()
-                       .show();
+                    }
+                })
+                .create()
+                .show();
 
         showMultiChoiceItems();
     }
@@ -132,8 +115,7 @@ public class List_Fragment extends Fragment {
                 Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
             }
         }).setNeutralButton("取消",null)
-          .create()
-          .show();
+                .create()
+                .show();
     }
-
 }

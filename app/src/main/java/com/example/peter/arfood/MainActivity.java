@@ -14,7 +14,6 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -35,7 +34,7 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
-import com.example.peter.arfood.Constants;
+
 public class MainActivity extends AppCompatActivity  {
     public static final String REGISTRATION_PROCESS = "註冊";
     public static final String MESSAGE_RECEIVED = "收到訊息";
@@ -48,8 +47,6 @@ public class MainActivity extends AppCompatActivity  {
     private LocationManager locMan;
     private GoogleApiClient mGoogleApiClient;
     String userEmail,userDisplayName;
-    private FragmentManager manager;
-    private FragmentTransaction transaction;
     private FragmentManager fragMentmanager;
     private FragmentTransaction fragmentTransaction;
 
@@ -84,18 +81,6 @@ public class MainActivity extends AppCompatActivity  {
         userEmail = intent.getStringExtra("USER_EMAIL");
         userDisplayName = intent.getStringExtra("USER_NAME");
 
-
-        manager = getSupportFragmentManager();
-
-        findViewById(R.id.List_Btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                transaction = manager.beginTransaction();
-
-                List_Fragment fragment = new List_Fragment();
-                transaction.replace(R.id.List_layout,fragment,"asd");
-                transaction.commit();
-
         fragMentmanager = getSupportFragmentManager();
 
         findViewById(R.id.List_Btn).setOnClickListener(new View.OnClickListener() {
@@ -106,7 +91,6 @@ public class MainActivity extends AppCompatActivity  {
                 List_Fragment fragment1 = new List_Fragment();
                 fragmentTransaction.replace(R.id.List_Layout,fragment1,"123");
                 fragmentTransaction.commit();
-
             }
         });
     }
@@ -301,7 +285,6 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
     }
-
     private void onImageGridClick(){
         findViewById(R.id.image_grid_btn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -315,4 +298,3 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 }
-

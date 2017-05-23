@@ -3,30 +3,12 @@
 
     <item
         is-multidex="true"
-<<<<<<< HEAD
         jar="C:\Users\user\ARFOOD\app\libs\universal-image-loader-1.9.5.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
         <dex dex="C:\Users\user\ARFOOD\app\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_9c2fc8becd951d6386453f4daf943a770a774127\classes.dex" />
-=======
-        jar="C:\Users\LuoLab\Desktop\ARFOOD-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bc6e3cbd56c90368ea7b5f1f24e9e03eebab4734">
-        <dex dex="C:\Users\LuoLab\Desktop\ARFOOD-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d66ee7a143fa0f9b7ba32ff08c3a4b6fe28d91fc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\LuoLab\Desktop\ARFOOD-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\Users\LuoLab\Desktop\ARFOOD-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5f452258f1796fa0e76f2bb41315aeec5bcb689f\classes.dex" />
->>>>>>> branch1
     </item>
 
 </items>
