@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.peter.arfood.fragment.ImageGridFragment;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -31,7 +32,7 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
-
+import com.example.peter.arfood.Constants;
 public class MainActivity extends AppCompatActivity  {
     public static final String REGISTRATION_PROCESS = "註冊";
     public static final String MESSAGE_RECEIVED = "收到訊息";
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity  {
         initViews();
         registerReceiver();
         googleSignOut();
+        onImageGridClick();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         mGoogleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
             @Override
@@ -265,6 +267,19 @@ public class MainActivity extends AppCompatActivity  {
 
             }
         });
+    }
+
+    private void onImageGridClick(){
+        findViewById(R.id.image_grid_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Here","image Grid");
+                Intent intent = new Intent(MainActivity.this, ImageGridActivity.class);
+                intent.putExtra(Constants.Extra.FRAGMENT_INDEX, ImageGridFragment.INDEX);
+                startActivity(intent);
+            }
+        });
+
     }
 }
 
