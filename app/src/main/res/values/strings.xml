@@ -3,8 +3,10 @@
     <string name="Sign_In">Sign_In</string>
     <string name="Sign_Out">Sign_Out</string>
     <string name="Show_GPS">Show_GPS</string>
+
     <string name="descr_image">Image</string>
     <string name="menu_item_pause_on_scroll">Pause on scroll</string>
     <string name="menu_item_pause_on_fling">Pause on fling</string>
     <string name="ac_name_image_grid">Image Grid Example</string>
+    <string name="hello_blank_fragment">fragment</string>
 </resources>

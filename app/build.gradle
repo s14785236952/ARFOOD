@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'peter'
             keyPassword 'peterq1546'
-            storeFile file('C:/Users/user/Desktop/ARFood/app/keystore/key.jks')
+            storeFile file('C:\\Users\\LuoLab\\Desktop\\ARFOOD fragment\\app\\keystore\\key.jks')
             storePassword 'peterq1546'
         }
     }
@@ -51,10 +51,14 @@ dependencies {
     compile 'com.google.android.gms:play-services-gcm:9.2.0'
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    compile 'com.android.support:support-v4:24.2.1'
     testCompile 'junit:junit:4.12'
 }
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch1
 apply plugin: 'com.google.gms.google-services'
