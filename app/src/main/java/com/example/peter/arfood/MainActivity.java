@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity  {
     String userEmail,userDisplayName;
     private FragmentManager manager;
     private FragmentTransaction transaction;
+    private FragmentManager fragMentmanager;
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity  {
         userEmail = intent.getStringExtra("USER_EMAIL");
         userDisplayName = intent.getStringExtra("USER_NAME");
 
+
         manager = getSupportFragmentManager();
 
         findViewById(R.id.List_Btn).setOnClickListener(new View.OnClickListener() {
@@ -92,6 +95,18 @@ public class MainActivity extends AppCompatActivity  {
                 List_Fragment fragment = new List_Fragment();
                 transaction.replace(R.id.List_layout,fragment,"asd");
                 transaction.commit();
+
+        fragMentmanager = getSupportFragmentManager();
+
+        findViewById(R.id.List_Btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmentTransaction = fragMentmanager.beginTransaction();
+
+                List_Fragment fragment1 = new List_Fragment();
+                fragmentTransaction.replace(R.id.List_Layout,fragment1,"123");
+                fragmentTransaction.commit();
+
             }
         });
     }
