@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\LuoLab\Desktop\ARFOOD fragment\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\LuoLab\Desktop\ARFOOD-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="c004b04d4449028b6135d15af26b5487d9e613f7">
-        <dex dex="C:\Users\LuoLab\Desktop\ARFOOD fragment\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9ba880a70c1d4e058aa4409d157dc5a6e8bc8db5\classes.dex" />
+        sha1="bc6e3cbd56c90368ea7b5f1f24e9e03eebab4734">
+        <dex dex="C:\Users\LuoLab\Desktop\ARFOOD-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d66ee7a143fa0f9b7ba32ff08c3a4b6fe28d91fc\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\LuoLab\Desktop\ARFOOD fragment\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\LuoLab\Desktop\ARFOOD-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\Users\LuoLab\Desktop\ARFOOD fragment\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f429225d570098ba812bbb56730a9102f8cf214b\classes.dex" />
+        <dex dex="C:\Users\LuoLab\Desktop\ARFOOD-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5f452258f1796fa0e76f2bb41315aeec5bcb689f\classes.dex" />
     </item>
 
 </items>

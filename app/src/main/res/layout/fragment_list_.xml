@@ -5,16 +5,44 @@
     tools:context="com.example.peter.arfood.List_Fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/List_Spanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/Type_Btn"
+                    android:text="+"
+                    android:layout_width="54dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/List_View1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
