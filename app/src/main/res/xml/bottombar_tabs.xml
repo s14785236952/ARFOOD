@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <tabs>
+        <tab
+            id="@+id/tab_explore"
+            icon="@drawable/ic_explore"
+            title="探索" />
+        <tab
+            id="@+id/tab_recommend"
+            icon="@drawable/ic_recommend"
+            title="推薦"
+            />
+        <tab
+            id="@+id/tab_city"
+            icon="@drawable/ic_city"
+            title="城市"
+            />
+        <tab
+            id="@+id/tab_favorite"
+            icon="@drawable/ic_favorite"
+            title="收藏"
+            />
+    </tabs>
+</PreferenceScreen>

@@ -75,8 +75,9 @@
         <service
             android:name=".RegistrationIntentService"
             android:exported="false" />
-
-        <activity android:name=".ImageGridActivity"></activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAO68GOLL0RoewpTreb1zqvNCZYyL5W5HU" />
     </application>
 
 </manifest>

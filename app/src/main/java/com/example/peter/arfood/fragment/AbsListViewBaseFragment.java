@@ -17,14 +17,8 @@
  *******************************************************************************/
 
 package com.example.peter.arfood.fragment;
-        import android.content.Intent;
-        import android.view.Menu;
-        import android.view.MenuItem;
         import android.widget.AbsListView;
-        import com.example.peter.arfood.R;
-        import com.example.peter.arfood.ImageGridActivity;
-        import com.nostra13.universalimageloader.core.ImageLoader;
-        import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
+
 /**
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  */

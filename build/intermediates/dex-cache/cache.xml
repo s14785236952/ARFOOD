@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\user\.android\build-cache\37ad47fd3db69ce3dbcec9ab15387eea962a558e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="32534a05122d0c535cc8b885e45b1e7ce3b0f03e">
+        <dex dex="C:\Users\user\ARFOOD\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a4d7c42d9acb402fb1ad3594b38820f5582741c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\user\ARFOOD\app\libs\universal-image-loader-1.9.5.jar"
         jumboMode="false"
         optimize="true"

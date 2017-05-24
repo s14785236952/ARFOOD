@@ -11,6 +11,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.Manifest;
 import android.provider.Settings;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -18,24 +19,31 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.widget.CursorAdapter;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.peter.arfood.fragment.ImageGridFragment;
+import com.example.peter.arfood.fragment.CityFragment;
+import com.example.peter.arfood.fragment.ExploreFragment;
+import com.example.peter.arfood.fragment.FavoriteFragment;
+import com.example.peter.arfood.fragment.RecommendFragment;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 
 public class MainActivity extends AppCompatActivity  {
+    private ExploreFragment explore;
+    private RecommendFragment recommend;
+    private CityFragment city;
+    private FavoriteFragment favorite;
     public static final String REGISTRATION_PROCESS = "註冊";
     public static final String MESSAGE_RECEIVED = "收到訊息";
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -49,15 +57,16 @@ public class MainActivity extends AppCompatActivity  {
     String userEmail,userDisplayName;
     private FragmentManager fragMentmanager;
     private FragmentTransaction fragmentTransaction;
-
+    public static final int FRAGMENT_EXPLORE=0;
+    public static final int FRAGMENT_RECOMMEND=1;
+    public static final int FRAGMENT_CITY=2;
+    public static final int FRAGMENT_FAVORITE=3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
         registerReceiver();
-        googleSignOut();
-        onImageGridClick();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         mGoogleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
             @Override
@@ -72,25 +81,44 @@ public class MainActivity extends AppCompatActivity  {
 //                showAlertDialog(message);
 //            }
 //        }
-        findViewById(R.id.show_cur_location_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getCurLocation();
-            }
-        });
+//        findViewById(R.id.show_cur_location_btn).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                getCurLocation();
+//            }
+//        });
         userEmail = intent.getStringExtra("USER_EMAIL");
         userDisplayName = intent.getStringExtra("USER_NAME");
 
         fragMentmanager = getSupportFragmentManager();
 
-        findViewById(R.id.List_Btn).setOnClickListener(new View.OnClickListener() {
+//        findViewById(R.id.List_Btn).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                fragmentTransaction = fragMentmanager.beginTransaction();
+//
+//                List_Fragment fragment1 = new List_Fragment();
+//                fragmentTransaction.replace(R.id.List_Layout,fragment1,"123");
+//                fragmentTransaction.commit();
+//            }
+//        });
+        showFragment(FRAGMENT_EXPLORE);
+        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
-            public void onClick(View view) {
-                fragmentTransaction = fragMentmanager.beginTransaction();
-
-                List_Fragment fragment1 = new List_Fragment();
-                fragmentTransaction.replace(R.id.List_Layout,fragment1,"123");
-                fragmentTransaction.commit();
+            public void onTabSelected(@IdRes int tabId) {
+                if (tabId == R.id.tab_explore) {
+                    showFragment(FRAGMENT_EXPLORE);
+                }
+                else if (tabId == R.id.tab_recommend) {
+                    showFragment(FRAGMENT_RECOMMEND);
+                }
+                else if (tabId == R.id.tab_city) {
+                    showFragment(FRAGMENT_CITY);
+                }
+                else if (tabId == R.id.tab_favorite) {
+                    showFragment(FRAGMENT_FAVORITE);
+                }
             }
         });
     }
@@ -98,17 +126,17 @@ public class MainActivity extends AppCompatActivity  {
 
 
     private void initViews() {
-        btn_register = (Button) findViewById(R.id.btn_register);
-
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkPlayServices()) {
-
-                    startRegisterProcess();
-                }
-            }
-        });
+        //TODO:you do not need to press a button that you can register your device to recieve the message
+//        btn_register = (Button) findViewById(R.id.btn_register);
+//
+//        btn_register.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (checkPlayServices()) {
+//                    startRegisterProcess();
+//                }
+//            }
+//        });
     }
 
     private void startRegisterProcess() {
@@ -229,6 +257,7 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     private void getCurLocation() {
+        // TODO:let Current Location can always send to Server.
         locMan = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (locMan.isProviderEnabled(LocationManager.GPS_PROVIDER) || locMan.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             locationServiceInitial();
@@ -265,36 +294,96 @@ public class MainActivity extends AppCompatActivity  {
             Toast.makeText(getBaseContext(), "Not get the location", Toast.LENGTH_SHORT).show();
     }
 
-    private void googleSignOut() {
-        findViewById(R.id.sign_out_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();
-            }
-        });
-    }
 
-    private void signOut() {
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
-            @Override
-            public void onResult(@NonNull Status status) {
-                Toast.makeText(getBaseContext(), "Success Sign out", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this,ARFood.class);
-                startActivity(intent);
+    //Fragment swap
+    public void showFragment(int index){
 
-            }
-        });
-    }
-    private void onImageGridClick(){
-        findViewById(R.id.image_grid_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Here","image Grid");
-                Intent intent = new Intent(MainActivity.this, ImageGridActivity.class);
-                intent.putExtra(Constants.Extra.FRAGMENT_INDEX, ImageGridFragment.INDEX);
-                startActivity(intent);
-            }
-        });
+        FragmentTransaction ft=fragMentmanager.beginTransaction();
+        hideFragment(ft);
 
+        switch (index){
+
+            case FRAGMENT_EXPLORE:
+
+                if (explore==null){
+                    explore=new ExploreFragment();
+                    ft.add(R.id.container,explore);
+                }else {
+                    ft.show(explore);
+                }
+
+                break;
+            case FRAGMENT_RECOMMEND:
+
+                if (recommend==null){
+                    recommend=new RecommendFragment();
+                    ft.add(R.id.container,recommend);
+                }else {
+                    ft.show(recommend);
+                }
+
+                break;
+            case FRAGMENT_CITY:
+
+                if (city==null){
+                    city=new CityFragment();
+                    ft.add(R.id.container,city);
+                }else {
+                    ft.show(city);
+                }
+
+                break;
+            case FRAGMENT_FAVORITE:
+
+                if (favorite==null){
+                    favorite=new FavoriteFragment();
+                    ft.add(R.id.container,favorite);
+                }else {
+                    ft.show(favorite);
+                }
+
+                break;
+        }
+
+
+        ft.commit();
     }
+    //if fragment is not NULL , hide the fragment.
+    public void hideFragment(FragmentTransaction ft){
+
+        if (explore!=null){
+            ft.hide(explore);
+        }
+        if(recommend!=null) {
+            ft.hide(recommend);
+        }
+        if(city!=null) {
+            ft.hide(city);
+        }
+        if(favorite!=null) {
+            ft.hide(favorite);
+        }
+    }
+    //TODO: If sign out?
+//    private void googleSignOut() {
+//        findViewById(R.id.sign_out_button).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                signOut();
+//            }
+//        });
+//    }
+//
+//    private void signOut() {
+//        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
+//            @Override
+//            public void onResult(@NonNull Status status) {
+//                Toast.makeText(getBaseContext(), "Success Sign out", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(MainActivity.this,ARFood.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//    }
+
 }
