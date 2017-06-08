@@ -76,6 +76,7 @@ public class ARFood extends AppCompatActivity {
                 GoogleSignInAccount acct = result.getSignInAccount();
                 userEmail = acct.getEmail();
                 userDisplayName = acct.getDisplayName();
+
                 Toast.makeText(getBaseContext(), "Success Sign in", Toast.LENGTH_SHORT).show();
                 startMainActivity();
                 //Toast.makeText(getBaseContext(), userEmail + userDisplayName, Toast.LENGTH_SHORT).show();

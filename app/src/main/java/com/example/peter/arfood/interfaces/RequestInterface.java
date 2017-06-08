@@ -1,4 +1,4 @@
-package com.example.peter.arfood;
+package com.example.peter.arfood.interfaces;
 
 import com.example.peter.arfood.models.RequestBody;
 import com.example.peter.arfood.models.ResponseBody;
@@ -8,7 +8,7 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface RequestInterface {
-
     @POST("devices")
     Call<ResponseBody> registerDevice(@Body RequestBody body);
 }
+

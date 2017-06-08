@@ -12,12 +12,13 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <permission
-        android:name="com.learn2crack.gcmdemo.permission.C2D_MESSAGE"
+        android:name="com.example.peter.arfood.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.learn2crack.gcmdemo.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.example.peter.arfood.permission.C2D_MESSAGE" />
 
     <application
         android:name=".UILApplication"
@@ -30,10 +31,9 @@
             android:name="com.google.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".ARFood">
+        <activity android:name="com.example.peter.arfood.ARFood">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -41,7 +41,7 @@
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
         -->
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.example.peter.arfood.MainActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -59,21 +59,21 @@
         </receiver>
 
         <service
-            android:name=".GCMService"
+            android:name="com.example.peter.arfood.GCMService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
         <service
-            android:name=".GCMInstanceIDListenerService"
+            android:name="com.example.peter.arfood.GCMInstanceIDListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
         <service
-            android:name=".RegistrationIntentService"
+            android:name="com.example.peter.arfood.RegistrationIntentService"
             android:exported="false" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"

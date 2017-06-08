@@ -30,7 +30,6 @@ import android.widget.Toast;
 import com.example.peter.arfood.fragment.CityFragment;
 import com.example.peter.arfood.fragment.ExploreFragment;
 import com.example.peter.arfood.fragment.FavoriteFragment;
-import com.example.peter.arfood.fragment.RecommendFragment;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -41,7 +40,7 @@ import com.roughike.bottombar.OnTabSelectListener;
 
 public class MainActivity extends AppCompatActivity  {
     private ExploreFragment explore;
-    private RecommendFragment recommend;
+//    private RecommendFragment recommend;
     private CityFragment city;
     private FavoriteFragment favorite;
     public static final String REGISTRATION_PROCESS = "註冊";
@@ -61,12 +60,25 @@ public class MainActivity extends AppCompatActivity  {
     public static final int FRAGMENT_RECOMMEND=1;
     public static final int FRAGMENT_CITY=2;
     public static final int FRAGMENT_FAVORITE=3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
         registerReceiver();
+        Intent intent = getIntent();
+        userEmail = intent.getStringExtra("USER_EMAIL");
+        userDisplayName = intent.getStringExtra("USER_NAME");
+        if (intent != null) {
+            if (intent.getAction() == MESSAGE_RECEIVED) {
+                String message = intent.getStringExtra("message");
+                showAlertDialog(message);
+            }
+        }
+        if(checkPermission()) {
+            startRegisterProcess();
+        }
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         mGoogleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
             @Override
@@ -74,22 +86,14 @@ public class MainActivity extends AppCompatActivity  {
                 Toast.makeText(getBaseContext(), "Connect Fail", Toast.LENGTH_SHORT).show();
             }
         }).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
-        Intent intent = getIntent();
-//        if (intent != null) {
-//            if (intent.getAction().equals(MESSAGE_RECEIVED)) {
-//                String message = intent.getStringExtra("message");
-//                showAlertDialog(message);
-//            }
-//        }
+
+
 //        findViewById(R.id.show_cur_location_btn).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                getCurLocation();
 //            }
 //        });
-        userEmail = intent.getStringExtra("USER_EMAIL");
-        userDisplayName = intent.getStringExtra("USER_NAME");
-
         fragMentmanager = getSupportFragmentManager();
 
 //        findViewById(R.id.List_Btn).setOnClickListener(new View.OnClickListener() {
@@ -155,10 +159,10 @@ public class MainActivity extends AppCompatActivity  {
     private void startRegisterService() {
 
         Intent intent = new Intent(MainActivity.this, RegistrationIntentService.class);
+        Log.d("Name: ",userDisplayName);
+        Log.d("Email: ",userEmail);
         intent.putExtra("USER_EMAIL", userEmail);
         intent.putExtra("USER_NAME",userDisplayName);
-        //intent.putExtra("USER_NAME",edittext.getText().toString());
-        //intent.putExtra("NAME_STUDENT",edittext2.getText().toString());
         startService(intent);
     }
 
@@ -194,11 +198,12 @@ public class MainActivity extends AppCompatActivity  {
 
                 String result = intent.getStringExtra("result");
                 String message = intent.getStringExtra("message");
-                Log.d(TAG, "onReceive: " + result + message);
-                Snackbar.make(findViewById(R.id.coordinatorLayout), result + " : " + message, Snackbar.LENGTH_SHORT).show();
+//                Log.d(TAG, "onReceive: " + result + message);
+//                Snackbar.make(findViewById(R.id.coordinatorLayout), result + " : " + message, Snackbar.LENGTH_SHORT).show();
             } else if (intent.getAction().equals(MESSAGE_RECEIVED)) {
 
                 String message = intent.getStringExtra("message");
+                Log.d("Recieved message",message);
                 showAlertDialog(message);
             }
         }
@@ -315,12 +320,12 @@ public class MainActivity extends AppCompatActivity  {
                 break;
             case FRAGMENT_RECOMMEND:
 
-                if (recommend==null){
-                    recommend=new RecommendFragment();
-                    ft.add(R.id.container,recommend);
-                }else {
-                    ft.show(recommend);
-                }
+//                if (recommend==null){
+//                    recommend=new RecommendFragment();
+//                    ft.add(R.id.container,recommend);
+//                }else {
+//                    ft.show(recommend);
+//                }
 
                 break;
             case FRAGMENT_CITY:
@@ -354,9 +359,9 @@ public class MainActivity extends AppCompatActivity  {
         if (explore!=null){
             ft.hide(explore);
         }
-        if(recommend!=null) {
-            ft.hide(recommend);
-        }
+//        if(recommend!=null) {
+//            ft.hide(recommend);
+//        }
         if(city!=null) {
             ft.hide(city);
         }

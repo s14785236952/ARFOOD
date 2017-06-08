@@ -92,7 +92,7 @@ public class CityFragment extends Fragment implements OnMapReadyCallback {
                 "]");
 
         map.setMapStyle(style);
-        map.getUiSettings().setCompassEnabled(false);
+//        map.getUiSettings().setCompassEnabled(false);
 //        map.getUiSettings().setRotateGesturesEnabled(false);
 //        map.getUiSettings().setTiltGesturesEnabled(false);
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -100,7 +100,7 @@ public class CityFragment extends Fragment implements OnMapReadyCallback {
                 .target(new LatLng(22.9920689,120.2224226))
                 .zoom(18)
                 .tilt(67.5f)
-                .bearing(314)
+                .bearing(123)
                 .build();
         map.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         LatLng Tainan = new LatLng(22.9920689,120.2224226);

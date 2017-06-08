@@ -15,30 +15,41 @@
  *******************************************************************************/
 package com.example.peter.arfood.fragment;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.peter.arfood.R;
+import com.example.peter.arfood.RestClient;
+import com.example.peter.arfood.models.Explore;
+import com.example.peter.arfood.models.RequestBody;
+import com.example.peter.arfood.models.ResponseBody;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingProgressListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.example.peter.arfood.Constants;
-import com.nostra13.universalimageloader.utils.StorageUtils;
 
-import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -48,7 +59,23 @@ public class ExploreFragment extends AbsListViewBaseFragment {
 
     public static final int INDEX = 1;
     private Context context;
+    List<String> exploreImages = new ArrayList<>();
+    RestClient restClient = RestClient.getInstance();
 
+    RestClient.ResultReadyCallback callback = new RestClient.ResultReadyCallback() {
+        @Override
+        public void resultReady(List<Explore> explores) {
+            for(Explore explore: explores) {
+                exploreImages.add(explore.image);
+                Log.d("imageex: ", String.valueOf(exploreImages));
+            }
+        }
+    };
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        restClient.setCallback(callback);
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -144,8 +171,21 @@ public class ExploreFragment extends AbsListViewBaseFragment {
         }
     }
 
+
     static class ViewHolder {
         ImageView imageView;
         ProgressBar progressBar;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        restClient.getExplores();
+    }
+
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 }

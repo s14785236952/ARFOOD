@@ -1,39 +1,33 @@
 {
   "project_info": {
-    "project_number": "233792107427",
-    "firebase_url": "https://fir-arfood.firebaseio.com",
-    "project_id": "firebase-arfood",
-    "storage_bucket": "firebase-arfood.appspot.com"
+    "project_number": "213222550622",
+    "project_id": "arfood-169817"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:233792107427:android:7c040ad4c1196f37",
+        "mobilesdk_app_id": "1:213222550622:android:7c040ad4c1196f37",
         "android_client_info": {
           "package_name": "com.example.peter.arfood"
         }
       },
       "oauth_client": [
         {
-          "client_id": "233792107427-4acuma4e4g2kq2e7b4a4rejcruvnrl98.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "233792107427-l9179m8gpdk6lmibiqd7ufc8eoe4ba98.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "233792107427-av7cr8ucv1tcdv38ikpvn9r3m4gjdqmu.apps.googleusercontent.com",
+          "client_id": "213222550622-qsip0qle8p4k2a8m55p1ngiqutrki8vg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.peter.arfood",
-            "certificate_hash": "7bc185a188e6f6e3932a88704d71252c6b694244"
+            "certificate_hash": "61a348302acc55912b19060c8c81b1450a31bdcb"
           }
+        },
+        {
+          "client_id": "213222550622-mfrt91onofccuk2u9t2ntccgvk887508.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBWkKgKT75Pf0zF2oRVSOxYBdO_pR6xZks"
+          "current_key": "AIzaSyAGYcY7kOjLpP5jApRfzRIkz1A9lFGWC3M"
         }
       ],
       "services": {
@@ -41,16 +35,11 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "233792107427-4acuma4e4g2kq2e7b4a4rejcruvnrl98.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
-          "status": 2
+          "status": 1
         }
       }
     }

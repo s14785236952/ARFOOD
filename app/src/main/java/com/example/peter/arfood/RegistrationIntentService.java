@@ -3,9 +3,9 @@ package com.example.peter.arfood;
 import android.app.IntentService;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 import android.widget.Toast;
 
+import com.example.peter.arfood.interfaces.RequestInterface;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
 import com.example.peter.arfood.models.RequestBody;
@@ -49,9 +49,9 @@ public class RegistrationIntentService extends IntentService{
         requestBody.setUserEmail(userEmail);
         requestBody.setUsername(userDisplayName);
         requestBody.setRegistrationId(registrationId);
-        Log.d("username:",userDisplayName);
+//        Log.d("username:",userDisplayName);
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("www.food-s14785236952.c9users.io")
+                .baseUrl("https://food-s14785236952.c9users.io/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
