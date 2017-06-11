@@ -15,16 +15,14 @@
  *******************************************************************************/
 package com.example.peter.arfood.fragment;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -33,67 +31,66 @@ import android.widget.ProgressBar;
 import com.example.peter.arfood.R;
 import com.example.peter.arfood.RestClient;
 import com.example.peter.arfood.models.Explore;
-import com.example.peter.arfood.models.RequestBody;
-import com.example.peter.arfood.models.ResponseBody;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingProgressListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.example.peter.arfood.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  */
 public class ExploreFragment extends AbsListViewBaseFragment {
-
     public static final int INDEX = 1;
     private Context context;
     List<String> exploreImages = new ArrayList<>();
     RestClient restClient = RestClient.getInstance();
+    boolean isDownloadDone = false;
+    public static String[] imageArray;
 
-    RestClient.ResultReadyCallback callback = new RestClient.ResultReadyCallback() {
-        @Override
-        public void resultReady(List<Explore> explores) {
-            for(Explore explore: explores) {
-                exploreImages.add(explore.image);
-                Log.d("imageex: ", String.valueOf(exploreImages));
-            }
-        }
-    };
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        restClient.setCallback(callback);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_explore, container, false);
-        GridView listView = (GridView) rootView.findViewById(R.id.grid);
-        listView.setAdapter(new ImageAdapter(getActivity()));
-//        listView.setOnItemClickListener(new OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                startImagePagerActivity(position);
-//            }
-//        });
+        final GridView listView = (GridView) rootView.findViewById(R.id.grid);
+
+        RestClient.ResultReadyCallback callback = new RestClient.ResultReadyCallback() {
+            @Override
+            public void resultReady(List<Explore> explores) {
+                for(Explore explore: explores) {
+                    exploreImages.add(explore.image);
+
+                }
+                Log.d("explore: ", String.valueOf(exploreImages));
+                isDownloadDone = true;
+                imageArray = new String[exploreImages.size()];
+                imageArray = imageListTOArray(exploreImages);
+                listView.setAdapter(new ImageAdapter(getActivity()));
+            }
+        };
+        restClient.setCallback(callback);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("position", String.valueOf(position));
+            }
+
+        });
         return rootView;
     }
 
-    private static class ImageAdapter extends BaseAdapter {
 
-        private static final String[] IMAGE_URLS = Constants.IMAGES;
+
+    private class ImageAdapter extends BaseAdapter {
 
         private LayoutInflater inflater;
 
@@ -115,7 +112,7 @@ public class ExploreFragment extends AbsListViewBaseFragment {
 
         @Override
         public int getCount() {
-            return IMAGE_URLS.length;
+            return imageArray.length;
         }
 
         @Override
@@ -144,7 +141,7 @@ public class ExploreFragment extends AbsListViewBaseFragment {
             }
 
             ImageLoader.getInstance()
-                    .displayImage(IMAGE_URLS[position], holder.imageView, options, new SimpleImageLoadingListener() {
+                    .displayImage(imageArray[position], holder.imageView, options, new SimpleImageLoadingListener() {
                         @Override
                         public void onLoadingStarted(String imageUri, View view) {
                             holder.progressBar.setProgress(0);
@@ -171,7 +168,14 @@ public class ExploreFragment extends AbsListViewBaseFragment {
         }
     }
 
+    public String[] imageListTOArray(List<String> exploreImages) {
+       String[] imageArray = new String[exploreImages.size()];
 
+        for (int i = 0; i<exploreImages.size();i++) {
+            imageArray[i] = "https://food-s14785236952.c9users.io/restaurant_image/"+exploreImages.get(i)+".jpg";
+        }
+        return imageArray;
+    }
     static class ViewHolder {
         ImageView imageView;
         ProgressBar progressBar;
@@ -188,4 +192,6 @@ public class ExploreFragment extends AbsListViewBaseFragment {
     public void onDetach() {
         super.onDetach();
     }
+
+
 }

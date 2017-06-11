@@ -27,7 +27,9 @@ import android.widget.Toast;
 import android.content.Context;
 
 import com.example.peter.arfood.MainActivity;
+import com.example.peter.arfood.PostActivity;
 import com.example.peter.arfood.R;
+import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -50,11 +52,10 @@ import static com.google.android.gms.plus.PlusOneDummyView.TAG;
 public class CityFragment extends Fragment implements OnMapReadyCallback {
 
     private MapView mapView;
-
+    private FloatingActionButton mbtn;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -64,53 +65,48 @@ public class CityFragment extends Fragment implements OnMapReadyCallback {
         View v = inflater.inflate(R.layout.fragment_city, container, false);
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
+        mbtn = (FloatingActionButton) v.findViewById(R.id.fab);
+        mbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setClass(getActivity(), PostActivity.class);
+                startActivity(i);
+            }
+        });
         return v;
     }
 
     @Override
     public void onMapReady(GoogleMap map) {
-        MapStyleOptions style = new MapStyleOptions("[" +
-                "  {" +
-                "    \"featureType\":\"poi.business\"," +
-                "    \"elementType\":\"all\"," +
-                "    \"stylers\":[" +
-                "      {" +
-                "        \"visibility\":\"off\"" +
-                "      }" +
-                "    ]" +
-                "  }," +
-                "  {" +
-                "    \"featureType\":\"transit\"," +
-                "    \"elementType\":\"all\"," +
-                "    \"stylers\":[" +
-                "      {" +
-                "        \"visibility\":\"off\"" +
-                "      }" +
-                "    ]" +
-                "  }" +
-                "]");
-
+        MapStyleOptions style = MapStyleOptions.loadRawResourceStyle(getActivity(), R.raw.style_json);
         map.setMapStyle(style);
-//        map.getUiSettings().setCompassEnabled(false);
-//        map.getUiSettings().setRotateGesturesEnabled(false);
-//        map.getUiSettings().setTiltGesturesEnabled(false);
+        map.getUiSettings().setCompassEnabled(false);
+        map.getUiSettings().setRotateGesturesEnabled(false);
+        map.getUiSettings().setTiltGesturesEnabled(false);
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(new LatLng(22.9920689,120.2224226))
-                .zoom(18)
-                .tilt(67.5f)
-                .bearing(123)
+                .zoom(17)
+                .tilt(0f)
+                .bearing(380)
                 .build();
         map.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         LatLng Tainan = new LatLng(22.9920689,120.2224226);
 
         GroundOverlayOptions newarkMap = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.test))
-                .position(Tainan, 100f);
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.meat))
+                .position(Tainan, 70f)
+                .bearing(20);
+
+        GroundOverlayOptions newarkMap2 = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.burger))
+                .position(new LatLng(22.9927550,120.2226270), 50f)
+                .bearing(20);
 
 // Add an overlay to the map, retaining a handle to the GroundOverlay object.
         GroundOverlay imageOverlay = map.addGroundOverlay(newarkMap);
+        GroundOverlay imageOverlay2 = map.addGroundOverlay(newarkMap2);
     }
 
     }

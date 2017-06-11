@@ -1,0 +1,16 @@
+<resources>
+    <string name="image">圖片</string>
+    <string name="all_image">所有圖片</string>
+    <string name="preview">預覽</string>
+    <string name="msg_no_camera">無法啟用相機</string>
+    <string name="msg_amount_limit">已達到最高選擇數量</string>
+    <string name="done">完成</string>
+    <string name="done_with_count">完成(%1$d/%2$d)</string>
+    <string name="image_index">%1$d/%2$d</string>
+    <string name="delete">删除</string>
+    <string name="deleted_a_photo">刪除了一張圖片</string>
+    <string name="confirm_to_delete">確定删除？</string>
+    <string name="yes">確定</string>
+    <string name="cancel">取消</string>
+    <string name="undo">還原</string>
+</resources>
