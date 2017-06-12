@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -29,9 +28,13 @@ public class RecommendFragment extends Fragment {
     private Button No2btn;
     private Button No3btn;
     private Button No4btn;
-
+    View view1,view2,view3,view4,view5;
     private ViewPager viewPager;
-    List<Recommend> recommendResults = new ArrayList<>();
+    List<String> recommendResults_name = new ArrayList<>();
+    List<String> recommendResults_address = new ArrayList<>();
+    List<String> recommendResults_phone = new ArrayList<>();
+    List<String> recommendResults_type = new ArrayList<>();
+    List<String> recommendResults_opening_hours = new ArrayList<>();
     boolean isDownloadDone = false;
     RestClient restClient = RestClient.getInstance();
 
@@ -48,7 +51,6 @@ public class RecommendFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_recommend,container,false);
-
         No1btn = (Button) v.findViewById(R.id.No1btn);
         No2btn = (Button) v.findViewById(R.id.No2btn);
         No3btn = (Button) v.findViewById(R.id.No3btn);
@@ -60,26 +62,38 @@ public class RecommendFragment extends Fragment {
         No4btn.setOnClickListener(No4btnOnClick);
 
         viewPager = (ViewPager) v.findViewById(R.id.page_pager);
-        View view1 = (View) inflater.inflate(R.layout.recommend_list_item1, null);
-        View view2 = (View) inflater.inflate(R.layout.recommend_list_item2, null);
-        View view3 = (View) inflater.inflate(R.layout.recommend_list_item3, null);
-        View view4 = (View) inflater.inflate(R.layout.recommend_list_item4, null);
-        View view5 = (View) inflater.inflate(R.layout.recommend_list_item5, null);
+        view1 = inflater.inflate(R.layout.recommend_list_item1, null);
+        view2 = inflater.inflate(R.layout.recommend_list_item2, null);
+        view3 = inflater.inflate(R.layout.recommend_list_item3, null);
+        view4 = inflater.inflate(R.layout.recommend_list_item4, null);
+        view5 = inflater.inflate(R.layout.recommend_list_item5, null);
 
         RestClient.RecommendResultReadyCallback callback = new RestClient.RecommendResultReadyCallback() {
             @Override
             public void recommendResultReady(List<Recommend> recommends) {
                 for(Recommend recommend: recommends) {
-                    recommendResults.add(recommend);
+                    recommendResults_name.add(recommend.name);
+                    recommendResults_address.add(recommend.address);
+                    recommendResults_phone.add(recommend.phone);
+                    recommendResults_type.add(recommend.type);
+                    recommendResults_opening_hours.add(recommend.opening_hours);
+
+
                 }
-                Log.d("recommend: ", String.valueOf(recommendResults));
+                Log.d(" recommend: ", String.valueOf(recommendResults_name));
+                Log.d(" recommend: ", String.valueOf(recommendResults_address));
+                Log.d(" recommend: ", String.valueOf(recommendResults_phone));
+                Log.d(" recommend: ", String.valueOf(recommendResults_type));
+                Log.d(" recommend: ", String.valueOf(recommendResults_opening_hours));
+                Log.d("r :",recommendResults_name.get(1));
                 isDownloadDone = true;
+                setViewText(view1, view2, view3, view4, view5);
             }
 
         };
         restClient.setCallback(callback);
 
-        setViewText(view1, view2, view3, view4, view5);
+
 
         ArrayList<View> views = new ArrayList<View>();
         views.add(view1);
@@ -108,18 +122,6 @@ public class RecommendFragment extends Fragment {
 
         });
         viewPager.setCurrentItem(Integer.MAX_VALUE/2);//默认在中间，使用户看不到边界
-
-
-
-
-
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Log.d("position", String.valueOf(position));
-//            }
-//
-//        });
 
         return v;
     }
@@ -151,61 +153,72 @@ public class RecommendFragment extends Fragment {
 
     private void setViewText(View view1, View view2, View view3, View view4, View view5){
         TextView name1 = (TextView) view1.findViewById(R.id.name);
-        name1.setText(recommendResults.get(0).getName());
-        TextView name2 = (TextView) view2.findViewById(R.id.name);
-        name2.setText(recommendResults.get(1).getName());
-        TextView name3 = (TextView) view3.findViewById(R.id.name);
-        name3.setText(recommendResults.get(2).getName());
-        TextView name4 = (TextView) view4.findViewById(R.id.name);
-        name4.setText(recommendResults.get(3).getName());
-        TextView name5 = (TextView) view5.findViewById(R.id.name);
-        name5.setText(recommendResults.get(4).getName());
-
+        name1.setText(""+recommendResults_name.get(0));
+//        TextView name2 = (TextView) view2.findViewById(R.id.name);
+//        name2.setText(""+recommendResults_name.get(1));
+//        TextView name3 = (TextView) view3.findViewById(R.id.name);
+//        name3.setText(""+recommendResults_name.get(2));
+//        TextView name4 = (TextView) view4.findViewById(R.id.name);
+//        name4.setText(""+recommendResults_name.get(3));
+//        TextView name5 = (TextView) view5.findViewById(R.id.name);
+//        name5.setText(""+recommendResults_name.get(4));
+//
         TextView address1 = (TextView) view1.findViewById(R.id.address);
-        address1.setText(recommendResults.get(0).getAddress());
-        TextView address2 = (TextView) view2.findViewById(R.id.address);
-        address2.setText(recommendResults.get(1).getAddress());
-        TextView address3 = (TextView) view3.findViewById(R.id.address);
-        address3.setText(recommendResults.get(2).getAddress());
-        TextView address4 = (TextView) view4.findViewById(R.id.address);
-        address4.setText(recommendResults.get(3).getAddress());
-        TextView address5 = (TextView) view5.findViewById(R.id.address);
-        address5.setText(recommendResults.get(4).getAddress());
-
+        address1.setText(""+recommendResults_address.get(0));
+//        TextView address2 = (TextView) view2.findViewById(R.id.address);
+//        address2.setText(""+recommendResults_address.get(1));
+//        TextView address3 = (TextView) view3.findViewById(R.id.address);
+//        address3.setText(""+recommendResults_address.get(2));
+//        TextView address4 = (TextView) view4.findViewById(R.id.address);
+//        address4.setText(""+recommendResults_address.get(3));
+//        TextView address5 = (TextView) view5.findViewById(R.id.address);
+//        address5.setText(""+recommendResults_address.get(4));
+//
         TextView phone1 = (TextView) view1.findViewById(R.id.phone);
-        phone1.setText(recommendResults.get(0).getPhone());
-        TextView phone2 = (TextView) view2.findViewById(R.id.phone);
-        phone2.setText(recommendResults.get(1).getPhone());
-        TextView phone3 = (TextView) view3.findViewById(R.id.phone);
-        phone3.setText(recommendResults.get(2).getPhone());
-        TextView phone4 = (TextView) view4.findViewById(R.id.phone);
-        phone4.setText(recommendResults.get(3).getPhone());
-        TextView phone5 = (TextView) view5.findViewById(R.id.phone);
-        phone5.setText(recommendResults.get(4).getPhone());
-
+        phone1.setText(""+recommendResults_phone.get(0));
+//        TextView phone2 = (TextView) view2.findViewById(R.id.phone);
+//        phone2.setText(""+recommendResults_phone.get(1));
+//        TextView phone3 = (TextView) view3.findViewById(R.id.phone);
+//        phone3.setText(""+recommendResults_phone.get(2));
+//        TextView phone4 = (TextView) view4.findViewById(R.id.phone);
+//        phone4.setText(""+recommendResults_phone.get(3));
+//        TextView phone5 = (TextView) view5.findViewById(R.id.phone);
+//        phone5.setText(""+recommendResults_phone.get(4));
+//
         TextView type1 = (TextView) view1.findViewById(R.id.type);
-        type1.setText(recommendResults.get(0).getType());
-        TextView type2 = (TextView) view2.findViewById(R.id.type);
-        type2.setText(recommendResults.get(1).getType());
-        TextView type3 = (TextView) view3.findViewById(R.id.type);
-        type3.setText(recommendResults.get(2).getType());
-        TextView type4 = (TextView) view4.findViewById(R.id.type);
-        type4.setText(recommendResults.get(3).getType());
-        TextView type5 = (TextView) view5.findViewById(R.id.type);
-        type5.setText(recommendResults.get(4).getType());
-
+        type1.setText(""+recommendResults_type.get(0));
+//        TextView type2 = (TextView) view2.findViewById(R.id.type);
+//        type2.setText(""+recommendResults_type.get(1));
+//        TextView type3 = (TextView) view3.findViewById(R.id.type);
+//        type3.setText(""+recommendResults_type.get(2));
+//        TextView type4 = (TextView) view4.findViewById(R.id.type);
+//        type4.setText(""+recommendResults_type.get(3));
+//        TextView type5 = (TextView) view5.findViewById(R.id.type);
+//        type5.setText(""+recommendResults_type.get(4));
+//
         TextView open1 = (TextView) view1.findViewById(R.id.opening_hours);
-        open1.setText(recommendResults.get(0).getOpening_hours());
-        TextView open2 = (TextView) view2.findViewById(R.id.opening_hours);
-        open2.setText(recommendResults.get(1).getOpening_hours());
-        TextView open3 = (TextView) view3.findViewById(R.id.opening_hours);
-        open3.setText(recommendResults.get(2).getOpening_hours());
-        TextView open4 = (TextView) view4.findViewById(R.id.opening_hours);
-        open4.setText(recommendResults.get(3).getOpening_hours());
-        TextView open5 = (TextView) view5.findViewById(R.id.opening_hours);
-        open5.setText(recommendResults.get(4).getOpening_hours());
+        open1.setText(""+recommendResults_opening_hours.get(0));
+//        TextView open2 = (TextView) view2.findViewById(R.id.opening_hours);
+//        open2.setText(""+recommendResults_opening_hours.get(1));
+//        TextView open3 = (TextView) view3.findViewById(R.id.opening_hours);
+//        open3.setText(""+recommendResults_opening_hours.get(2));
+//        TextView open4 = (TextView) view4.findViewById(R.id.opening_hours);
+//        open4.setText(""+recommendResults_opening_hours.get(3));
+//        TextView open5 = (TextView) view5.findViewById(R.id.opening_hours);
+//        open5.setText(""+recommendResults_opening_hours.get(4));
 
 
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        restClient.getRecommends();
+    }
+
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 
 }

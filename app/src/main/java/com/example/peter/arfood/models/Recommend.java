@@ -15,19 +15,4 @@ public class Recommend {
         this.opening_hours = opening_hours;
     }
 
-    public String getName(){
-        return this.name;
-    }
-    public String getAddress(){
-        return this.address;
-    }
-    public String getPhone(){
-        return this.phone;
-    }
-    public String getType(){
-        return this.type;
-    }
-    public String getOpening_hours(){
-        return this.opening_hours;
-    }
 }

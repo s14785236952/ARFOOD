@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'peter'
             keyPassword 'peterq1546'
-            storeFile file('J:/Class/HumanComputer_Interaction/Git_ARFOOD/app/keystore/key.jks')
+            storeFile file('C:/Users/user/ARFOOD/app/keystore/key.jks')
             storePassword 'peterq1546'
         }
     }
