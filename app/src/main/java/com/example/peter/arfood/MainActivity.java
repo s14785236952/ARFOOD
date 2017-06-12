@@ -30,6 +30,7 @@ import android.widget.Toast;
 import com.example.peter.arfood.fragment.CityFragment;
 import com.example.peter.arfood.fragment.ExploreFragment;
 import com.example.peter.arfood.fragment.FavoriteFragment;
+import com.example.peter.arfood.fragment.RecommendFragment;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -40,7 +41,7 @@ import com.roughike.bottombar.OnTabSelectListener;
 
 public class MainActivity extends AppCompatActivity  {
     private ExploreFragment explore;
-//    private RecommendFragment recommend;
+    private RecommendFragment recommend;
     private CityFragment city;
     private FavoriteFragment favorite;
     public static final String REGISTRATION_PROCESS = "註冊";
@@ -320,12 +321,12 @@ public class MainActivity extends AppCompatActivity  {
                 break;
             case FRAGMENT_RECOMMEND:
 
-//                if (recommend==null){
-//                    recommend=new RecommendFragment();
-//                    ft.add(R.id.container,recommend);
-//                }else {
-//                    ft.show(recommend);
-//                }
+                if (recommend==null){
+                    recommend=new RecommendFragment();
+                    ft.add(R.id.container,recommend);
+                }else {
+                    ft.show(recommend);
+                }
 
                 break;
             case FRAGMENT_CITY:
@@ -359,9 +360,9 @@ public class MainActivity extends AppCompatActivity  {
         if (explore!=null){
             ft.hide(explore);
         }
-//        if(recommend!=null) {
-//            ft.hide(recommend);
-//        }
+        if(recommend!=null) {
+            ft.hide(recommend);
+        }
         if(city!=null) {
             ft.hide(city);
         }

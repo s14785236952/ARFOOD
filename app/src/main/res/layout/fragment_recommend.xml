@@ -1,13 +1,102 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.peter.arfood.fragment.RecommendFragment">
+    tools:context="com.example.peter.arfood.fragment.RecommendFragment"
+    android:orientation="vertical"
+    android:layout_marginBottom="56dp"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_weight=".6">
 
-</FrameLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/page_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/SaveRecommendList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="推薦候選區"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/No1btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:text="BUTTON"
+                    android:layout_weight="1"
+                    android:background="@drawable/circlebtn"
+                    />
+
+                <Button
+                    android:id="@+id/No2btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:text="BUTTON"
+                    android:layout_weight="1"
+                    android:background="@drawable/circlebtn"/>
+
+                <Button
+                    android:id="@+id/No3btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:text="BUTTON"
+                    android:layout_weight="1"
+                    android:background="@drawable/circlebtn"/>
+
+                <Button
+                    android:id="@+id/No4btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:text="BUTTON"
+                    android:layout_weight="1"
+                    android:background="@drawable/circlebtn"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>
