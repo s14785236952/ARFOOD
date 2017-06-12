@@ -37,6 +37,7 @@ public class RecommendAdapter extends android.support.v4.view.PagerAdapter {
         if (position<0){
             position = viewlist.size()+position;
         }
+
         View view = viewlist.get(position);
         //如果View已经在之前添加到了一个父组件，则必须先remove，否则会抛出IllegalStateException。
         ViewParent vp =view.getParent();
