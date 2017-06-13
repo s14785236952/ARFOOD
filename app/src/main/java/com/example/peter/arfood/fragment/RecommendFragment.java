@@ -18,9 +18,6 @@ import com.example.peter.arfood.models.Recommend;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class RecommendFragment extends Fragment {
 
     View v;
@@ -80,13 +77,6 @@ public class RecommendFragment extends Fragment {
 
 
                 }
-                Log.d(" recommend: ", String.valueOf(recommendResults_name));
-                Log.d(" recommend: ", String.valueOf(recommendResults_address));
-                Log.d(" recommend: ", String.valueOf(recommendResults_phone));
-                Log.d(" recommend: ", String.valueOf(recommendResults_type));
-                Log.d(" recommend: ", String.valueOf(recommendResults_opening_hours));
-                Log.d("r :",recommendResults_name.get(1));
-                isDownloadDone = true;
                 setViewText(view1, view2, view3, view4, view5);
             }
 

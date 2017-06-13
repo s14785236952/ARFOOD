@@ -16,6 +16,8 @@ package com.example.peter.arfood;
         import retrofit2.Retrofit;
         import retrofit2.converter.gson.GsonConverterFactory;
 
+        import static com.example.peter.arfood.MainActivity.userEmail;
+
 public class RestClient{
 
     private static RestClient instance = null;
@@ -40,7 +42,9 @@ public class RestClient{
     }
 
     public List<Recommend> getRecommends() {
-        Call<List<Recommend>> recommendlist = service.recommends();
+        String user = userEmail;
+        Log.d("userhaha: ",user);
+        Call<List<Recommend>> recommendlist = service.recommends(user);
         recommendlist.enqueue(new Callback<List<Recommend>>() {
             @Override
             public void onResponse(Call<List<Recommend>> call, Response<List<Recommend>> response) {

@@ -9,13 +9,14 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface APIService {
-    @POST("recommend_results")
+    @POST("recommend_results/")
     Call<Recommend> createRecommend(@Body Recommend recommend);
 
-    @GET("recommend_results")
-    Call<List<Recommend>> recommends();
+    @GET("recommend_results/{user}")
+    Call<List<Recommend>> recommends(@Path("user") String user);
 
     @POST("restaurant_explore")
     Call<Explore> createExplore(@Body Explore explore);
