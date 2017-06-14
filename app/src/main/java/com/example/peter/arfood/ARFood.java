@@ -29,8 +29,7 @@ public class ARFood extends AppCompatActivity {
     //private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
     private GoogleApiClient mGoogleApiClient;
-    private String userEmail;
-    private String userDisplayName;
+    public static String userEmail,userDisplayName;
 
 
     @Override
@@ -92,8 +91,6 @@ public class ARFood extends AppCompatActivity {
     private void startMainActivity(){
 
         Intent intent = new Intent(ARFood.this, MainActivity.class);
-        intent.putExtra("USER_EMAIL", userEmail);
-        intent.putExtra("USER_NAME", userDisplayName);
         startActivity(intent);
     }
 

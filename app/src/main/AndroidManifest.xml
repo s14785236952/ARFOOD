@@ -24,7 +24,7 @@
     <application
         android:name=".UILApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/deli"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"

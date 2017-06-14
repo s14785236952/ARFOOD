@@ -23,6 +23,7 @@ import android.support.v4.widget.CursorAdapter;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
@@ -39,6 +40,9 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
+import static com.example.peter.arfood.ARFood.userDisplayName;
+import static com.example.peter.arfood.ARFood.userEmail;
+
 public class MainActivity extends AppCompatActivity  {
     private ExploreFragment explore;
     private RecommendFragment recommend;
@@ -54,32 +58,33 @@ public class MainActivity extends AppCompatActivity  {
     private double userLongitude;
     private LocationManager locMan;
     private GoogleApiClient mGoogleApiClient;
-    String userEmail,userDisplayName;
     private FragmentManager fragMentmanager;
     private FragmentTransaction fragmentTransaction;
     public static final int FRAGMENT_EXPLORE=0;
     public static final int FRAGMENT_RECOMMEND=1;
     public static final int FRAGMENT_CITY=2;
     public static final int FRAGMENT_FAVORITE=3;
-
+    public static int FROM_POSTACTIVITY = 0;
+    private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
         initViews();
         registerReceiver();
         Intent intent = getIntent();
-        userEmail = intent.getStringExtra("USER_EMAIL");
-        userDisplayName = intent.getStringExtra("USER_NAME");
+        Log.d("user",userEmail);
         if (intent != null) {
             if (intent.getAction() == MESSAGE_RECEIVED) {
                 String message = intent.getStringExtra("message");
                 showAlertDialog(message);
             }
         }
-        if(checkPermission()) {
+
+            Log.d("register","1");
             startRegisterProcess();
-        }
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         mGoogleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
             @Override
@@ -107,7 +112,12 @@ public class MainActivity extends AppCompatActivity  {
 //                fragmentTransaction.commit();
 //            }
 //        });
-        showFragment(FRAGMENT_EXPLORE);
+        if (FROM_POSTACTIVITY == 0) {
+            showFragment(FRAGMENT_EXPLORE);
+        } else if (FROM_POSTACTIVITY == 100) {
+            showFragment(FRAGMENT_CITY);
+            FROM_POSTACTIVITY = 0;
+        }
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
@@ -147,11 +157,11 @@ public class MainActivity extends AppCompatActivity  {
     private void startRegisterProcess() {
 
         if (checkPermission()) {
-
+            Log.d("register","2");
             startRegisterService();
 
         } else {
-
+            Log.d("register","3");
             requestPermission();
         }
 
@@ -330,7 +340,6 @@ public class MainActivity extends AppCompatActivity  {
 
                 break;
             case FRAGMENT_CITY:
-
                 if (city==null){
                     city=new CityFragment();
                     ft.add(R.id.container,city);

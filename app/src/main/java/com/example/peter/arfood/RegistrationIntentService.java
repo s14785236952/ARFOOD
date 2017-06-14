@@ -3,6 +3,7 @@ package com.example.peter.arfood;
 import android.app.IntentService;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.peter.arfood.interfaces.RequestInterface;
@@ -49,7 +50,7 @@ public class RegistrationIntentService extends IntentService{
         requestBody.setUserEmail(userEmail);
         requestBody.setUsername(userDisplayName);
         requestBody.setRegistrationId(registrationId);
-//        Log.d("username:",userDisplayName);
+        Log.d("username:",userDisplayName);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://food-s14785236952.c9users.io/")
                 .addConverterFactory(GsonConverterFactory.create())

@@ -18,9 +18,6 @@ import com.example.peter.arfood.models.Recommend;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class RecommendFragment extends Fragment {
 
     View v;
@@ -62,11 +59,11 @@ public class RecommendFragment extends Fragment {
         No4btn.setOnClickListener(No4btnOnClick);
 
         viewPager = (ViewPager) v.findViewById(R.id.page_pager);
-        view1 = inflater.inflate(R.layout.recommend_list_item1, null);
-        view2 = inflater.inflate(R.layout.recommend_list_item2, null);
-        view3 = inflater.inflate(R.layout.recommend_list_item3, null);
-        view4 = inflater.inflate(R.layout.recommend_list_item4, null);
-        view5 = inflater.inflate(R.layout.recommend_list_item5, null);
+        view1 = inflater.inflate(R.layout.recommend_list_item, null);
+        view2 = inflater.inflate(R.layout.recommend_list_item, null);
+        view3 = inflater.inflate(R.layout.recommend_list_item, null);
+        view4 = inflater.inflate(R.layout.recommend_list_item, null);
+        view5 = inflater.inflate(R.layout.recommend_list_item, null);
 
         RestClient.RecommendResultReadyCallback callback = new RestClient.RecommendResultReadyCallback() {
             @Override
@@ -80,13 +77,6 @@ public class RecommendFragment extends Fragment {
 
 
                 }
-                Log.d(" recommend: ", String.valueOf(recommendResults_name));
-                Log.d(" recommend: ", String.valueOf(recommendResults_address));
-                Log.d(" recommend: ", String.valueOf(recommendResults_phone));
-                Log.d(" recommend: ", String.valueOf(recommendResults_type));
-                Log.d(" recommend: ", String.valueOf(recommendResults_opening_hours));
-                Log.d("r :",recommendResults_name.get(1));
-                isDownloadDone = true;
                 setViewText(view1, view2, view3, view4, view5);
             }
 
@@ -154,58 +144,58 @@ public class RecommendFragment extends Fragment {
     private void setViewText(View view1, View view2, View view3, View view4, View view5){
         TextView name1 = (TextView) view1.findViewById(R.id.name);
         name1.setText(""+recommendResults_name.get(0));
-//        TextView name2 = (TextView) view2.findViewById(R.id.name);
-//        name2.setText(""+recommendResults_name.get(1));
-//        TextView name3 = (TextView) view3.findViewById(R.id.name);
-//        name3.setText(""+recommendResults_name.get(2));
-//        TextView name4 = (TextView) view4.findViewById(R.id.name);
-//        name4.setText(""+recommendResults_name.get(3));
-//        TextView name5 = (TextView) view5.findViewById(R.id.name);
-//        name5.setText(""+recommendResults_name.get(4));
+        TextView name2 = (TextView) view2.findViewById(R.id.name);
+        name2.setText(""+recommendResults_name.get(1));
+        TextView name3 = (TextView) view3.findViewById(R.id.name);
+        name3.setText(""+recommendResults_name.get(2));
+        TextView name4 = (TextView) view4.findViewById(R.id.name);
+        name4.setText(""+recommendResults_name.get(3));
+        TextView name5 = (TextView) view5.findViewById(R.id.name);
+        name5.setText(""+recommendResults_name.get(4));
 //
         TextView address1 = (TextView) view1.findViewById(R.id.address);
         address1.setText(""+recommendResults_address.get(0));
-//        TextView address2 = (TextView) view2.findViewById(R.id.address);
-//        address2.setText(""+recommendResults_address.get(1));
-//        TextView address3 = (TextView) view3.findViewById(R.id.address);
-//        address3.setText(""+recommendResults_address.get(2));
-//        TextView address4 = (TextView) view4.findViewById(R.id.address);
-//        address4.setText(""+recommendResults_address.get(3));
-//        TextView address5 = (TextView) view5.findViewById(R.id.address);
-//        address5.setText(""+recommendResults_address.get(4));
+        TextView address2 = (TextView) view2.findViewById(R.id.address);
+        address2.setText(""+recommendResults_address.get(1));
+        TextView address3 = (TextView) view3.findViewById(R.id.address);
+        address3.setText(""+recommendResults_address.get(2));
+        TextView address4 = (TextView) view4.findViewById(R.id.address);
+        address4.setText(""+recommendResults_address.get(3));
+        TextView address5 = (TextView) view5.findViewById(R.id.address);
+        address5.setText(""+recommendResults_address.get(4));
 //
         TextView phone1 = (TextView) view1.findViewById(R.id.phone);
         phone1.setText(""+recommendResults_phone.get(0));
-//        TextView phone2 = (TextView) view2.findViewById(R.id.phone);
-//        phone2.setText(""+recommendResults_phone.get(1));
-//        TextView phone3 = (TextView) view3.findViewById(R.id.phone);
-//        phone3.setText(""+recommendResults_phone.get(2));
-//        TextView phone4 = (TextView) view4.findViewById(R.id.phone);
-//        phone4.setText(""+recommendResults_phone.get(3));
-//        TextView phone5 = (TextView) view5.findViewById(R.id.phone);
-//        phone5.setText(""+recommendResults_phone.get(4));
+        TextView phone2 = (TextView) view2.findViewById(R.id.phone);
+        phone2.setText(""+recommendResults_phone.get(1));
+        TextView phone3 = (TextView) view3.findViewById(R.id.phone);
+        phone3.setText(""+recommendResults_phone.get(2));
+        TextView phone4 = (TextView) view4.findViewById(R.id.phone);
+        phone4.setText(""+recommendResults_phone.get(3));
+        TextView phone5 = (TextView) view5.findViewById(R.id.phone);
+        phone5.setText(""+recommendResults_phone.get(4));
 //
         TextView type1 = (TextView) view1.findViewById(R.id.type);
         type1.setText(""+recommendResults_type.get(0));
-//        TextView type2 = (TextView) view2.findViewById(R.id.type);
-//        type2.setText(""+recommendResults_type.get(1));
-//        TextView type3 = (TextView) view3.findViewById(R.id.type);
-//        type3.setText(""+recommendResults_type.get(2));
-//        TextView type4 = (TextView) view4.findViewById(R.id.type);
-//        type4.setText(""+recommendResults_type.get(3));
-//        TextView type5 = (TextView) view5.findViewById(R.id.type);
-//        type5.setText(""+recommendResults_type.get(4));
+        TextView type2 = (TextView) view2.findViewById(R.id.type);
+        type2.setText(""+recommendResults_type.get(1));
+        TextView type3 = (TextView) view3.findViewById(R.id.type);
+        type3.setText(""+recommendResults_type.get(2));
+        TextView type4 = (TextView) view4.findViewById(R.id.type);
+        type4.setText(""+recommendResults_type.get(3));
+        TextView type5 = (TextView) view5.findViewById(R.id.type);
+        type5.setText(""+recommendResults_type.get(4));
 //
         TextView open1 = (TextView) view1.findViewById(R.id.opening_hours);
         open1.setText(""+recommendResults_opening_hours.get(0));
-//        TextView open2 = (TextView) view2.findViewById(R.id.opening_hours);
-//        open2.setText(""+recommendResults_opening_hours.get(1));
-//        TextView open3 = (TextView) view3.findViewById(R.id.opening_hours);
-//        open3.setText(""+recommendResults_opening_hours.get(2));
-//        TextView open4 = (TextView) view4.findViewById(R.id.opening_hours);
-//        open4.setText(""+recommendResults_opening_hours.get(3));
-//        TextView open5 = (TextView) view5.findViewById(R.id.opening_hours);
-//        open5.setText(""+recommendResults_opening_hours.get(4));
+        TextView open2 = (TextView) view2.findViewById(R.id.opening_hours);
+        open2.setText(""+recommendResults_opening_hours.get(1));
+        TextView open3 = (TextView) view3.findViewById(R.id.opening_hours);
+        open3.setText(""+recommendResults_opening_hours.get(2));
+        TextView open4 = (TextView) view4.findViewById(R.id.opening_hours);
+        open4.setText(""+recommendResults_opening_hours.get(3));
+        TextView open5 = (TextView) view5.findViewById(R.id.opening_hours);
+        open5.setText(""+recommendResults_opening_hours.get(4));
 
 
     }

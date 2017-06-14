@@ -1,5 +1,10 @@
 package com.example.peter.arfood;
 
+import com.example.peter.arfood.interfaces.RequestInterface;
+import com.example.peter.arfood.models.RequestBody;
+import com.example.peter.arfood.models.ResponseBody;
+import com.example.peter.arfood.models.UserBeen;
+import com.example.peter.arfood.services.APIService;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -10,6 +15,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Log;
@@ -24,11 +30,13 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.model.LatLng;
 import com.lidong.photopicker.ImageCaptureManager;
 import com.lidong.photopicker.PhotoPickerActivity;
 import com.lidong.photopicker.PhotoPreviewActivity;
@@ -38,6 +46,17 @@ import com.lidong.photopicker.intent.PhotoPreviewIntent;
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.example.peter.arfood.ARFood.userEmail;
+import static com.example.peter.arfood.MainActivity.FROM_POSTACTIVITY;
+
 
 /**
  */
@@ -48,7 +67,10 @@ public class PostActivity extends FragmentActivity
     private static final int REQUEST_PREVIEW_CODE = 20;
     private ArrayList<String> imagePaths = new ArrayList<>();
     private ImageCaptureManager captureManager; // 相机拍照处理类
-
+    public static String name;
+    public static  String address;
+    public static String placeLatLng;
+    public static String type;
     private GridView gridView;
     private GridAdapter gridAdapter;
     private Button mButton,mBtn;
@@ -127,7 +149,8 @@ public class PostActivity extends FragmentActivity
                     @Override
                     public void run() {
                         super.run();
-                        FileUploadManager.uploadMany(imagePaths, depp);
+                        postProcess(userEmail,name,address,placeLatLng,type);
+//                        FileUploadManager.uploadMany(imagePaths, depp);
 //                        FileUploadManager.upload(imagePaths,depp);
                     }
                 }.start();
@@ -165,8 +188,11 @@ public class PostActivity extends FragmentActivity
             // The user has selected a place. Extract the name and address.
             final Place place = PlacePicker.getPlace(this,data);
 
-            final CharSequence name = place.getName();
-            final CharSequence address = place.getAddress();
+            name = (String) place.getName();
+            address = (String) place.getAddress();
+            placeLatLng = String.valueOf(place.getLatLng());
+            final List<Integer> types = place.getPlaceTypes();
+            type = String.valueOf(types.get(0));
             mViewName.setText(name);
             mViewAddress.setText(address);
         } else {
@@ -251,5 +277,39 @@ public class PostActivity extends FragmentActivity
         class ViewHolder {
             ImageView image;
         }
+    }
+
+    private void postProcess(String userEmail,String name, String address, String placeLatLng, String type){
+
+        UserBeen userBeen = new UserBeen();
+        userBeen.setUserEmail(userEmail);
+        userBeen.setName(name);
+        userBeen.setAddress(address);
+        userBeen.setPlaceLatLng(placeLatLng);
+        userBeen.setType(type);
+        Log.d("userEmail:",userEmail+name);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://food-s14785236952.c9users.io/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        APIService request = retrofit.create(APIService.class);
+        Call<UserBeen> call = request.createUserBeen(userBeen);
+        call.enqueue(new Callback<UserBeen>() {
+            @Override
+            public void onResponse(Call<UserBeen> call, Response<UserBeen> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<UserBeen> call, Throwable t) {
+                Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        FROM_POSTACTIVITY = 100;
+        Intent intent = new Intent();
+        intent.setClass(PostActivity.this, MainActivity.class);
+        startActivity(intent);
+
     }
 }

@@ -29,6 +29,9 @@ import android.content.Context;
 import com.example.peter.arfood.MainActivity;
 import com.example.peter.arfood.PostActivity;
 import com.example.peter.arfood.R;
+import com.example.peter.arfood.RestClient;
+import com.example.peter.arfood.models.Recommend;
+import com.example.peter.arfood.models.UserBeen;
 import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -46,16 +49,25 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.maps.android.clustering.ClusterItem;
 import com.google.maps.android.clustering.ClusterManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.google.android.gms.plus.PlusOneDummyView.TAG;
 
 
 public class CityFragment extends Fragment implements OnMapReadyCallback {
-
+    RestClient restClient = RestClient.getInstance();
     private MapView mapView;
     private FloatingActionButton mbtn;
+    public static List<String> userBeenResults_name = new ArrayList<>();
+    public static List<String> userBeenResults_address = new ArrayList<>();
+    public static List<String> userBeenResults_LatLng = new ArrayList<>();
+    public static List<String> userBeenResults_type = new ArrayList<>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -63,8 +75,27 @@ public class CityFragment extends Fragment implements OnMapReadyCallback {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_city, container, false);
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        RestClient.UserBeenResultReadyCallback callback = new RestClient.UserBeenResultReadyCallback() {
+            @Override
+            public void userBeenResultReady(List<UserBeen> userBeen) {
+                for(UserBeen u: userBeen) {
+                    userBeenResults_name.add(u.name);
+                    userBeenResults_address.add(u.address);
+                    userBeenResults_LatLng.add(u.placeLatLng);
+                    userBeenResults_type.add(u.type);
+                }
+                Log.d("userBeen: ", String.valueOf(userBeenResults_name));
+                Log.d("userBeen: ", String.valueOf(userBeenResults_address));
+                Log.d("userBeen: ", String.valueOf(userBeenResults_LatLng));
+                Log.d("userBeen: ", String.valueOf(userBeenResults_type));
+                SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+                mapFragment.getMapAsync(CityFragment.this);
+            }
+
+        };
+        restClient.setCallback(callback);
+
+
         mbtn = (FloatingActionButton) v.findViewById(R.id.fab);
         mbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +105,7 @@ public class CityFragment extends Fragment implements OnMapReadyCallback {
                 startActivity(i);
             }
         });
+
         return v;
     }
 
@@ -94,21 +126,61 @@ public class CityFragment extends Fragment implements OnMapReadyCallback {
         map.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         LatLng Tainan = new LatLng(22.9920689,120.2224226);
 
-        GroundOverlayOptions newarkMap = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.meat))
-                .position(Tainan, 70f)
-                .bearing(20);
+        for (int i = 0; i<userBeenResults_name.size();i++){
+            String place = userBeenResults_LatLng.get(i).replaceAll("[a-z]","");
+            place = place.replaceAll("/","");
+            place = place.replaceAll(":","");
+            place = place.replaceAll(" ","");
+            place = place.replaceAll("[()]","");
+            String[] LatLng = place.split(",");
+            Double Lat = Double.valueOf(LatLng[0]);
+            Double Lng = Double.valueOf(LatLng[1]);
+            Log.d("place",place);
+            if(Integer.valueOf(userBeenResults_type.get(i)) == 15) {
+                map.addGroundOverlay(new GroundOverlayOptions()
+                        .image(BitmapDescriptorFactory.fromResource(R.drawable.cafe))
+                        .position(new LatLng(Lat, Lng), 50f)
+                        .bearing(20));
+            } else if(Integer.valueOf(userBeenResults_type.get(i)) == 7) {
+                map.addGroundOverlay(new GroundOverlayOptions()
+                        .image(BitmapDescriptorFactory.fromResource(R.drawable.bakery))
+                        .position(new LatLng(Lat, Lng), 50f)
+                        .bearing(20));
+            } else if(Integer.valueOf(userBeenResults_type.get(i)) == 9) {
+                map.addGroundOverlay(new GroundOverlayOptions()
+                        .image(BitmapDescriptorFactory.fromResource(R.drawable.beer))
+                        .position(new LatLng(Lat, Lng), 50f)
+                        .bearing(20));
+            } else if(Integer.valueOf(userBeenResults_type.get(i)) == 38) {
+                map.addGroundOverlay(new GroundOverlayOptions()
+                        .image(BitmapDescriptorFactory.fromResource(R.drawable.meat))
+                        .position(new LatLng(Lat, Lng), 50f)
+                        .bearing(20));
+            } else if(Integer.valueOf(userBeenResults_type.get(i)) == 79) {
+                map.addGroundOverlay(new GroundOverlayOptions()
+                        .image(BitmapDescriptorFactory.fromResource(R.drawable.sushi))
+                        .position(new LatLng(Lat, Lng), 50f)
+                        .bearing(20));
+            } else {
+                map.addGroundOverlay(new GroundOverlayOptions()
+                        .image(BitmapDescriptorFactory.fromResource(R.drawable.burger))
+                        .position(new LatLng(Lat, Lng), 50f)
+                        .bearing(20));
+            }
+        }
 
-        GroundOverlayOptions newarkMap2 = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.burger))
-                .position(new LatLng(22.9927550,120.2226270), 50f)
-                .bearing(20);
-
-// Add an overlay to the map, retaining a handle to the GroundOverlay object.
-        GroundOverlay imageOverlay = map.addGroundOverlay(newarkMap);
-        GroundOverlay imageOverlay2 = map.addGroundOverlay(newarkMap2);
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        restClient.getUserBeens();
     }
 
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
     }
 
 

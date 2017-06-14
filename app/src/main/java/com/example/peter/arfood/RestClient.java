@@ -6,6 +6,7 @@ package com.example.peter.arfood;
         import com.example.peter.arfood.fragment.ExploreFragment;
         import com.example.peter.arfood.models.Explore;
         import com.example.peter.arfood.models.Recommend;
+        import com.example.peter.arfood.models.UserBeen;
         import com.example.peter.arfood.services.APIService;
 
         import java.util.List;
@@ -16,17 +17,21 @@ package com.example.peter.arfood;
         import retrofit2.Retrofit;
         import retrofit2.converter.gson.GsonConverterFactory;
 
+        import static com.example.peter.arfood.ARFood.userEmail;
+
+
 public class RestClient{
 
     private static RestClient instance = null;
 
     private ResultReadyCallback callback;
     private RecommendResultReadyCallback recommendCallback;
-
+    private UserBeenResultReadyCallback userBeenResultReadyCallback;
     private static final String BASE_URL = "https://food-s14785236952.c9users.io/";
     private APIService service;
     List<Explore> explores = null;
     List<Recommend> recommends = null;
+    List<UserBeen> userBeen = null;
     boolean success = false;
 
 
@@ -40,7 +45,9 @@ public class RestClient{
     }
 
     public List<Recommend> getRecommends() {
-        Call<List<Recommend>> recommendlist = service.recommends();
+        String user = userEmail;
+        Log.d("userhaha: ",user);
+        Call<List<Recommend>> recommendlist = service.recommends(user);
         recommendlist.enqueue(new Callback<List<Recommend>>() {
             @Override
             public void onResponse(Call<List<Recommend>> call, Response<List<Recommend>> response) {
@@ -79,12 +86,38 @@ public class RestClient{
         return explores;
     }
 
+    public List<Explore> getUserBeens() {
+        String user = userEmail;
+        Call<List<UserBeen>> userBeenlist = service.userBeen(user);
+        userBeenlist.enqueue(new Callback<List<UserBeen>>() {
+            @Override
+            public void onResponse(Call<List<UserBeen>> call, Response<List<UserBeen>> response) {
+                if (response.isSuccessful()) {
+                    userBeen = response.body();
+                    userBeenResultReadyCallback.userBeenResultReady(userBeen);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<UserBeen>> call, Throwable t) {
+                Log.e("REST", t.getMessage());
+            }
+
+        });
+        return explores;
+    }
+
+
     public void setCallback(ResultReadyCallback callback) {
         this.callback = callback;
     }
 
     public void setCallback(RecommendResultReadyCallback callback) {
         this.recommendCallback = callback;
+    }
+
+    public void setCallback(UserBeenResultReadyCallback callback) {
+        this.userBeenResultReadyCallback = callback;
     }
 
     public boolean createRecommend(final Context ctx, Recommend recommend) {
@@ -109,27 +142,7 @@ public class RestClient{
         return success;
     }
 
-    public boolean createExplore(final Context ctx, Explore explore) {
-        Call<Explore> u = service.createExplore(explore);
-        u.enqueue(new Callback<Explore>() {
-            @Override
-            public void onResponse(Call<Explore> call, Response<Explore> response) {
-                success = response.isSuccessful();
-                if(success) {
-                    Toast.makeText(ctx, "Explore Created", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(ctx, "Couldn't create explore", Toast.LENGTH_SHORT).show();
-                }
-            }
 
-            @Override
-            public void onFailure(Call<Explore> call, Throwable t) {
-                Log.w("REST", t.getMessage());
-                Toast.makeText(ctx, "Couldn't create explore", Toast.LENGTH_SHORT).show();
-            }
-        });
-        return success;
-    }
 
     public static RestClient getInstance() {
         if(instance == null) {
@@ -144,6 +157,10 @@ public class RestClient{
 
     public interface RecommendResultReadyCallback {
         public void recommendResultReady(List<Recommend> recommends);
+    }
+
+    public interface UserBeenResultReadyCallback {
+        public void userBeenResultReady(List<UserBeen> userBeen);
     }
 
 }
