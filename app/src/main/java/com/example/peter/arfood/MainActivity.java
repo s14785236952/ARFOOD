@@ -58,22 +58,27 @@ public class MainActivity extends AppCompatActivity  {
     private double userLongitude;
     private LocationManager locMan;
     private GoogleApiClient mGoogleApiClient;
+
+    public static String userEmail,userDisplayName;
     private FragmentManager fragMentmanager;
     private FragmentTransaction fragmentTransaction;
     public static final int FRAGMENT_EXPLORE=0;
     public static final int FRAGMENT_RECOMMEND=1;
     public static final int FRAGMENT_CITY=2;
     public static final int FRAGMENT_FAVORITE=3;
-    public static int FROM_POSTACTIVITY = 0;
+
     private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.inflateMenu(R.menu.menu_layout);
         initViews();
         registerReceiver();
         Intent intent = getIntent();
+        userEmail = intent.getStringExtra("USER_EMAIL");
+        userDisplayName = intent.getStringExtra("USER_NAME");
         Log.d("user",userEmail);
         if (intent != null) {
             if (intent.getAction() == MESSAGE_RECEIVED) {

@@ -17,8 +17,7 @@ package com.example.peter.arfood;
         import retrofit2.Retrofit;
         import retrofit2.converter.gson.GsonConverterFactory;
 
-        import static com.example.peter.arfood.ARFood.userEmail;
-
+        import static com.example.peter.arfood.MainActivity.userEmail;
 
 public class RestClient{
 
