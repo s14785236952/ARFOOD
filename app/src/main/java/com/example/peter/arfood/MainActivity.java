@@ -117,12 +117,7 @@ public class MainActivity extends AppCompatActivity  {
 //                fragmentTransaction.commit();
 //            }
 //        });
-        if (FROM_POSTACTIVITY == 0) {
-            showFragment(FRAGMENT_EXPLORE);
-        } else if (FROM_POSTACTIVITY == 100) {
-            showFragment(FRAGMENT_CITY);
-            FROM_POSTACTIVITY = 0;
-        }
+      
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
