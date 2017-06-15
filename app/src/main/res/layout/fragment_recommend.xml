@@ -10,34 +10,45 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight=".6">
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame_line">
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/page_pager"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"
+            android:text="智慧推薦"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:textColor="#FF0088"/>
 
     </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/page_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".8"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2">
 
-
         <LinearLayout
+            android:id="@+id/menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:background="@drawable/frame_line">
 
             <TextView
                 android:id="@+id/SaveRecommendList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="推薦候選區"/>
+                android:padding="5dp"
+                android:text="推薦候選"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

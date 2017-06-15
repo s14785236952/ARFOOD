@@ -1,13 +1,18 @@
 package com.example.peter.arfood.fragment;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.peter.arfood.R;
@@ -81,9 +86,10 @@ public class RecommendFragment extends Fragment {
             }
 
         };
+
+        setViewImage(view1, view2, view3, view4, view5);
+
         restClient.setCallback(callback);
-
-
 
         ArrayList<View> views = new ArrayList<View>();
         views.add(view1);
@@ -140,6 +146,19 @@ public class RecommendFragment extends Fragment {
 
         }
     };
+
+    private void setViewImage(View view1, View view2, View view3, View view4, View view5){
+        ImageView view1Image = (ImageView) view1.findViewById(R.id.imageView);
+        view1Image.setImageResource(R.drawable.noodle);
+        ImageView view2Image = (ImageView) view2.findViewById(R.id.imageView);
+        view2Image.setImageResource(R.drawable.green);
+        ImageView view3Image = (ImageView) view3.findViewById(R.id.imageView);
+        view3Image.setImageResource(R.drawable.octopus);
+        ImageView view4Image = (ImageView) view4.findViewById(R.id.imageView);
+        view4Image.setImageResource(R.drawable.foodbox);
+        ImageView view5Image = (ImageView) view5.findViewById(R.id.imageView);
+        view5Image.setImageResource(R.drawable.ice);
+    }
 
     private void setViewText(View view1, View view2, View view3, View view4, View view5){
         TextView name1 = (TextView) view1.findViewById(R.id.name);
@@ -204,7 +223,6 @@ public class RecommendFragment extends Fragment {
         super.onResume();
         restClient.getRecommends();
     }
-
 
     @Override
     public void onDetach() {
