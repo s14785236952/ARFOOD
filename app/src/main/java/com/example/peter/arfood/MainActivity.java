@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity  {
     private LocationManager locMan;
     private GoogleApiClient mGoogleApiClient;
 
-    public static String userEmail,userDisplayName;
     private FragmentManager fragMentmanager;
     private FragmentTransaction fragmentTransaction;
     public static final int FRAGMENT_EXPLORE=0;
@@ -73,12 +72,9 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.inflateMenu(R.menu.menu_layout);
         initViews();
         registerReceiver();
         Intent intent = getIntent();
-        userEmail = intent.getStringExtra("USER_EMAIL");
-        userDisplayName = intent.getStringExtra("USER_NAME");
         Log.d("user",userEmail);
         if (intent != null) {
             if (intent.getAction() == MESSAGE_RECEIVED) {
@@ -117,7 +113,7 @@ public class MainActivity extends AppCompatActivity  {
 //                fragmentTransaction.commit();
 //            }
 //        });
-      
+
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override

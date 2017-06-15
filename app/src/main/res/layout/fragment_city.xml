@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,19 +15,18 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="193dp"
-            tools:context=".MainActivity" />
+            android:layout_alignParentTop="true" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_marginBottom="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_edit"/>
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="71dp"
+            android:src="@drawable/ic_edit" />
 
 
     </RelativeLayout>

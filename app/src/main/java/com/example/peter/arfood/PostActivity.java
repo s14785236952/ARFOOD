@@ -55,7 +55,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.example.peter.arfood.ARFood.userEmail;
-import static com.example.peter.arfood.MainActivity.FROM_POSTACTIVITY;
 
 
 /**
@@ -306,7 +305,6 @@ public class PostActivity extends FragmentActivity
                 Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
-        FROM_POSTACTIVITY = 100;
         Intent intent = new Intent();
         intent.setClass(PostActivity.this, MainActivity.class);
         startActivity(intent);

@@ -140,34 +140,42 @@ public class CityFragment extends Fragment implements OnMapReadyCallback {
                 map.addGroundOverlay(new GroundOverlayOptions()
                         .image(BitmapDescriptorFactory.fromResource(R.drawable.cafe))
                         .position(new LatLng(Lat, Lng), 50f)
-                        .bearing(20));
+                        .bearing(20))
+                        .setClickable(true);
             } else if(Integer.valueOf(userBeenResults_type.get(i)) == 7) {
                 map.addGroundOverlay(new GroundOverlayOptions()
                         .image(BitmapDescriptorFactory.fromResource(R.drawable.bakery))
                         .position(new LatLng(Lat, Lng), 50f)
-                        .bearing(20));
+                        .bearing(20)).setClickable(true);
             } else if(Integer.valueOf(userBeenResults_type.get(i)) == 9) {
                 map.addGroundOverlay(new GroundOverlayOptions()
                         .image(BitmapDescriptorFactory.fromResource(R.drawable.beer))
                         .position(new LatLng(Lat, Lng), 50f)
-                        .bearing(20));
+                        .bearing(20)).setClickable(true);
             } else if(Integer.valueOf(userBeenResults_type.get(i)) == 38) {
                 map.addGroundOverlay(new GroundOverlayOptions()
                         .image(BitmapDescriptorFactory.fromResource(R.drawable.meat))
                         .position(new LatLng(Lat, Lng), 50f)
-                        .bearing(20));
+                        .bearing(20)).setClickable(true);
             } else if(Integer.valueOf(userBeenResults_type.get(i)) == 79) {
                 map.addGroundOverlay(new GroundOverlayOptions()
                         .image(BitmapDescriptorFactory.fromResource(R.drawable.sushi))
                         .position(new LatLng(Lat, Lng), 50f)
-                        .bearing(20));
+                        .bearing(20)).setClickable(true);
             } else {
                 map.addGroundOverlay(new GroundOverlayOptions()
                         .image(BitmapDescriptorFactory.fromResource(R.drawable.burger))
                         .position(new LatLng(Lat, Lng), 50f)
-                        .bearing(20));
+                        .bearing(20)).setClickable(true);
             }
         }
+
+        map.setOnGroundOverlayClickListener(new GoogleMap.OnGroundOverlayClickListener() {
+            @Override
+            public void onGroundOverlayClick(GroundOverlay groundOverlay) {
+                
+            }
+        });
 
     }
     @Override
