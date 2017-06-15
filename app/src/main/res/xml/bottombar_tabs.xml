@@ -3,22 +3,26 @@
     <tabs>
         <tab
             id="@+id/tab_explore"
-            icon="@drawable/ic_explore"
-            title="探索" />
+            icon="@drawable/explore_tab"
+            activeColor="#FF627E"/>
         <tab
             id="@+id/tab_recommend"
-            icon="@drawable/ic_recommend"
-            title="推薦"
+            icon="@drawable/recommend_tab"
+            activeColor="#FF627E"
             />
         <tab
-            id="@+id/tab_city"
-            icon="@drawable/ic_city"
-            title="城市"
+            id="@+id/tab_blank"
+            icon="@mipmap/blank"
             />
         <tab
             id="@+id/tab_favorite"
-            icon="@drawable/ic_favorite"
-            title="收藏"
+            icon="@drawable/list_tab"
+            activeColor="#FF627E"
+            />
+        <tab
+            id="@+id/tab_account"
+            icon="@drawable/account_tab"
+            activeColor="#FF627E"
             />
     </tabs>
 </PreferenceScreen>

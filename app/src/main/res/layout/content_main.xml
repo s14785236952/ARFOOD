@@ -6,78 +6,95 @@
     android:layout_height="match_parent">
 
 
-
-
-    <FrameLayout
-        android:id="@+id/container"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.peter.arfood.MainActivity"
-        tools:ignore="MergeRootFrame">
+        android:layout_height="match_parent">
 
-        <!--<android.support.v7.widget.AppCompatButton-->
-        <!--android:id="@+id/btn_register"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:text="註冊手機即可收到通知" />-->
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.peter.arfood.MainActivity"
+            tools:ignore="MergeRootFrame">
 
-        <!--<Button-->
-        <!--android:id="@+id/image_grid_btn"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_below="@+id/btn_register"-->
-        <!--android:layout_marginTop="50dp"-->
-        <!--android:text="顯示圖片" />-->
+            <!--<android.support.v7.widget.AppCompatButton-->
+            <!--android:id="@+id/btn_register"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:text="註冊手機即可收到通知" />-->
 
-        <!--<Button-->
-        <!--android:id="@+id/sign_out_button"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_marginTop="100dp"-->
-        <!--android:text="@string/Sign_Out" />-->
+            <!--<Button-->
+            <!--android:id="@+id/image_grid_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_below="@+id/btn_register"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:text="顯示圖片" />-->
 
-        <!--<Button-->
-        <!--android:id="@+id/show_cur_location_btn"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_marginTop="150dp"-->
-        <!--android:text="@string/Show_GPS" />-->
+            <!--<Button-->
+            <!--android:id="@+id/sign_out_button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_marginTop="100dp"-->
+            <!--android:text="@string/Sign_Out" />-->
 
-        <!--<Button-->
-        <!--android:id="@+id/List_Btn"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_below="@+id/image_grid_btn"-->
-        <!--android:layout_marginTop="200dp"-->
-        <!--android:text="List" />-->
+            <!--<Button-->
+            <!--android:id="@+id/show_cur_location_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginTop="150dp"-->
+            <!--android:text="@string/Show_GPS" />-->
 
-        <!--<LinearLayout-->
-        <!--android:id="@+id/List_Layout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="238dp"-->
-        <!--android:layout_below="@+id/List_Btn"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="200dp"-->
-        <!--android:orientation="vertical"></LinearLayout>-->
-    </FrameLayout>
-    <com.roughike.bottombar.BottomBar
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_gravity="bottom"
-        app:bb_titleTextAppearance="@style/CustomTitleTextAppearance"
-        app:bb_tabXmlResource="@xml/bottombar_tabs"
-        app:bb_behavior="shy"
-        app:bb_titleTypeFace="fonts/Roboto-Regular.ttf"/>
+            <!--<Button-->
+            <!--android:id="@+id/List_Btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_below="@+id/image_grid_btn"-->
+            <!--android:layout_marginTop="200dp"-->
+            <!--android:text="List" />-->
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/List_Layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="238dp"-->
+            <!--android:layout_below="@+id/List_Btn"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="200dp"-->
+            <!--android:orientation="vertical"></LinearLayout>-->
+
+            <com.roughike.bottombar.BottomBar
+                android:id="@+id/bottomBar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="bottom"
+                app:bb_tabXmlResource="@xml/bottombar_tabs" />
+
+        </FrameLayout>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="81dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/citymapoff"
+            app:fab_colorNormal="#FFFFFF"
+            app:fab_colorPressed="#FFFFFF"
+            app:fab_showShadow="false" />
+    </RelativeLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>

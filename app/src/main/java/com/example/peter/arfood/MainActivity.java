@@ -13,6 +13,7 @@ import android.Manifest;
 import android.provider.Settings;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
@@ -25,6 +26,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity  {
     private double userLongitude;
     private LocationManager locMan;
     private GoogleApiClient mGoogleApiClient;
-
+    private com.github.clans.fab.FloatingActionButton fab;
     private FragmentManager fragMentmanager;
     private FragmentTransaction fragmentTransaction;
     public static final int FRAGMENT_EXPLORE=0;
@@ -114,22 +116,33 @@ public class MainActivity extends AppCompatActivity  {
 //            }
 //        });
 
-        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        fab = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab);
+        final BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
                 if (tabId == R.id.tab_explore) {
                     showFragment(FRAGMENT_EXPLORE);
+                    fab.setImageResource(R.mipmap.citymapoff);
                 }
                 else if (tabId == R.id.tab_recommend) {
                     showFragment(FRAGMENT_RECOMMEND);
-                }
-                else if (tabId == R.id.tab_city) {
-                    showFragment(FRAGMENT_CITY);
+                    fab.setImageResource(R.mipmap.citymapoff);
                 }
                 else if (tabId == R.id.tab_favorite) {
                     showFragment(FRAGMENT_FAVORITE);
+                    fab.setImageResource(R.mipmap.citymapoff);
                 }
+            }
+        });
+
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showFragment(FRAGMENT_CITY);
+                fab.setImageResource(R.mipmap.citymapon);
+                bottomBar.selectTabWithId(R.id.tab_blank);
             }
         });
     }
