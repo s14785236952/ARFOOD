@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="titles">
+        <item>圖片</item>
+        <item>專欄</item>
+        <item>地圖</item>
+    </string-array>
+
+</resources>

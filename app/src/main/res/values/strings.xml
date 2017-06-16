@@ -10,4 +10,5 @@
     <string name="ac_name_image_grid">Image Grid Example</string>
     <string name="hello_blank_fragment">fragment</string>
     <string name="title_activity_post">PostActivity</string>
+    <string name="title_activity_restaurant">RestaurantActivity</string>
 </resources>

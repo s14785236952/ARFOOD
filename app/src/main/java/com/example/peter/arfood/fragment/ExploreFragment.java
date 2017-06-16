@@ -18,8 +18,12 @@ package com.example.peter.arfood.fragment;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -28,9 +32,13 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.example.peter.arfood.App;
 import com.example.peter.arfood.R;
 import com.example.peter.arfood.RestClient;
+import com.example.peter.arfood.Snap;
+import com.example.peter.arfood.SnapAdapter;
 import com.example.peter.arfood.models.Explore;
+import com.gigamole.navigationtabstrip.NavigationTabStrip;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -45,10 +53,13 @@ import java.util.List;
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  */
 public class ExploreFragment extends AbsListViewBaseFragment {
+    public static final String ORIENTATION = "orientation";
+
+    private RecyclerView mRecyclerView;
+    private boolean mHorizontal;
     public static final int INDEX = 1;
     private Context context;
     List<String> exploreImages = new ArrayList<>();
-    RestClient restClient = RestClient.getInstance();
     boolean isDownloadDone = false;
     public static String[] imageArray;
 
@@ -60,31 +71,44 @@ public class ExploreFragment extends AbsListViewBaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_explore, container, false);
-        final GridView listView = (GridView) rootView.findViewById(R.id.grid);
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        final NavigationTabStrip navigationTabStrip = (NavigationTabStrip) rootView.findViewById(R.id.nts);
+        navigationTabStrip.setTabIndex(0, true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setHasFixedSize(true);
 
-        RestClient.ResultReadyCallback callback = new RestClient.ResultReadyCallback() {
-            @Override
-            public void resultReady(List<Explore> explores) {
-                for(Explore explore: explores) {
-                    exploreImages.add(explore.image);
+        if (savedInstanceState == null) {
+            mHorizontal = true;
+        } else {
+            mHorizontal = savedInstanceState.getBoolean(ORIENTATION);
+        }
 
-                }
-                Log.d("explore: ", String.valueOf(exploreImages));
-                isDownloadDone = true;
-                imageArray = new String[exploreImages.size()];
-                imageArray = imageListTOArray(exploreImages);
-                listView.setAdapter(new ImageAdapter(getActivity()));
-            }
-        };
-        restClient.setCallback(callback);
+        setupAdapter();
+//        final GridView listView = (GridView) rootView.findViewById(R.id.grid);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("position", String.valueOf(position));
-            }
+//        RestClient.ResultReadyCallback callback = new RestClient.ResultReadyCallback() {
+//            @Override
+//            public void resultReady(List<Explore> explores) {
+//                for(Explore explore: explores) {
+//                    exploreImages.add(explore.image);
+//
+//                }
+//                Log.d("explore: ", String.valueOf(exploreImages));
+//                isDownloadDone = true;
+//                imageArray = new String[exploreImages.size()];
+//                imageArray = imageListTOArray(exploreImages);
+//                listView.setAdapter(new ImageAdapter(getActivity()));
+//            }
+//        };
+//        restClient.setCallback(callback);
 
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Log.d("position", String.valueOf(position));
+//            }
+//
+//        });
         return rootView;
     }
 
@@ -184,7 +208,7 @@ public class ExploreFragment extends AbsListViewBaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        restClient.getExplores();
+//        restClient.getExplores();
     }
 
 
@@ -193,5 +217,40 @@ public class ExploreFragment extends AbsListViewBaseFragment {
         super.onDetach();
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(ORIENTATION, mHorizontal);
+    }
+
+    private void setupAdapter() {
+        List<App> apps = getApps();
+        List<App> hots = getHots();
+        SnapAdapter snapAdapter = new SnapAdapter();
+        if (mHorizontal) {;
+            snapAdapter.addSnap(new Snap(Gravity.START, "附近美食", apps));
+            snapAdapter.addSnap(new Snap(Gravity.CENTER, "最熱門", hots));
+        } else {
+
+        }
+
+        mRecyclerView.setAdapter(snapAdapter);
+    }
+
+    private List<App> getApps() {
+        List<App> apps = new ArrayList<>();
+        apps.add(new App("1", R.mipmap.explorefood1, 4.6f));
+        apps.add(new App("2",  R.mipmap.explorefood2, 4.8f));
+        apps.add(new App("4",  R.mipmap.explorefood4, 4.5f));
+        apps.add(new App("0",  R.mipmap.explorefood5, 4.2f));
+        return apps;
+    }
+
+    private List<App> getHots() {
+        List<App> hots = new ArrayList<>();
+        hots.add(new App("3", R.mipmap.explorefood3, 5.2f));
+        hots.add(new App("0", R.mipmap.explorefood6, 5.2f));
+        return hots;
+    }
 
 }

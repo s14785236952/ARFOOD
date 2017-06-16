@@ -5,6 +5,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.peter.arfood.App;
+import com.example.peter.arfood.R;
+import com.example.peter.arfood.Snap;
+import com.example.peter.arfood.SnapAdapter;
+import com.example.peter.arfood.SnapAdapterFavorite;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,7 +36,7 @@ import static com.example.peter.arfood.R.*;
  * A simple {@link Fragment} subclass.
  */
 public class FavoriteFragment extends Fragment {
-
+    public static final String ORIENTATION = "orientation";
     private List<String> All_List = new ArrayList<String>(Arrays.asList("Tea's", "俗又大碗", "鴨肉羹", "芋園", "阿寬", "8鍋", "布格", "好小子", "橘屋","小茂屋","大茂屋","忠茂屋"));
     private List<String> Spinner_List = new ArrayList<String>(Arrays.asList("全部"));
     private boolean isChecked[];
@@ -36,6 +45,8 @@ public class FavoriteFragment extends Fragment {
     private Spinner spinner;
     private ListView listView;
     private String[] Type;
+    private RecyclerView mRecyclerView;
+    private boolean mHorizontal;
     View v;
 
     public FavoriteFragment() {
@@ -51,22 +62,35 @@ public class FavoriteFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(layout.fragment_favorite,container,false);
-        listView = (ListView) v.findViewById(id.List_View1);
-        listAdapter = new ArrayAdapter<String>(getActivity(),simple_list_item_1,All_List);
-        listView.setAdapter(listAdapter);
+        mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setHasFixedSize(true);
 
-        spinner = (Spinner)v.findViewById(id.List_Spanner);
-        SpinnerAdapter = new ArrayAdapter<String>(getActivity(),simple_spinner_dropdown_item,Spinner_List);
-        spinner.setAdapter(SpinnerAdapter);
+        if (savedInstanceState == null) {
+            mHorizontal = true;
+        } else {
+            mHorizontal = savedInstanceState.getBoolean(ORIENTATION);
+        }
 
-        v.findViewById(id.Type_Btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showMultiChoiceItems();
-            }
-        });
+        setupAdapter();
+//        listView = (ListView) v.findViewById(id.List_View1);
+//        listAdapter = new ArrayAdapter<String>(getActivity(),simple_list_item_1,All_List);
+//        listView.setAdapter(listAdapter);
+//
+//        spinner = (Spinner)v.findViewById(id.List_Spanner);
+//        SpinnerAdapter = new ArrayAdapter<String>(getActivity(),simple_spinner_dropdown_item,Spinner_List);
+//        spinner.setAdapter(SpinnerAdapter);
+//
+//        v.findViewById(id.Type_Btn).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                showMultiChoiceItems();
+//            }
+//        });
         return v;
     }
+
+
     private void showEditText(){
         AlertDialog.Builder Dialog_EditText = new AlertDialog.Builder(getActivity());
 
@@ -116,5 +140,39 @@ public class FavoriteFragment extends Fragment {
         }).setNeutralButton("取消",null)
                 .create()
                 .show();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(ORIENTATION, mHorizontal);
+    }
+
+    private void setupAdapter() {
+        List<App> apps = getApps();
+        List<App> hots = getHots();
+        SnapAdapterFavorite snapAdapter = new SnapAdapterFavorite();
+        if (mHorizontal) {;
+            snapAdapter.addSnap(new Snap(Gravity.START, "與我共享", apps));
+            snapAdapter.addSnap(new Snap(Gravity.CENTER, "我的收藏", hots));
+        } else {
+
+        }
+
+        mRecyclerView.setAdapter(snapAdapter);
+    }
+
+    private List<App> getApps() {
+        List<App> apps = new ArrayList<>();
+        apps.add(new App("吃貨好夥伴", drawable.sharelist1,drawable.sharelist2,drawable.sharelist3, 4.6f));
+        apps.add(new App("吃遍大江南北", drawable.sharelist4,drawable.sharelist5,drawable.sharelist6, 4.8f));
+        return apps;
+    }
+
+    private List<App> getHots() {
+        List<App> hots = new ArrayList<>();
+        hots.add(new App("韓式好好吃", drawable.listfood1,drawable.listfood2,drawable.listfood3, 5.2f));
+        hots.add(new App("日式讚讚", drawable.listfood4,drawable.listfood5,drawable.listfood6, 5.2f));
+        return hots;
     }
 }

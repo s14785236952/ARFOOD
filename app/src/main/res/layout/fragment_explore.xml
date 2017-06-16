@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
+    android:background="#FFFFFF"
 tools:context="com.example.peter.arfood.fragment.FavoriteFragment">
 
     <android.support.v7.widget.Toolbar
@@ -16,21 +17,55 @@ tools:context="com.example.peter.arfood.fragment.FavoriteFragment">
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
+    <com.gigamole.navigationtabstrip.NavigationTabStrip
+        android:id="@+id/nts"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="55dp"
+        android:background="#FFFFFF"
+        app:nts_active_color="#3F6792"
+        app:nts_animation_duration="300"
+        app:nts_color="#3F6792"
+        app:nts_corners_radius="1.5dp"
+        app:nts_factor="2.5"
+        app:nts_gravity="bottom"
+        app:nts_inactive_color="#c4c4c4"
+        app:nts_size="15sp"
+        app:nts_titles="@array/titles"
+        app:nts_type="line"
+        app:nts_typeface="fonts/typeface.otf"
+        app:nts_weight="3dp" />
 
-    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/grid"
+
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="55dp"
-        android:gravity="center"
-        android:horizontalSpacing="4dip"
-        android:numColumns="3"
-        android:padding="4dip"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="4dip"
+        android:layout_marginTop="105dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <!--<GridView xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:id="@+id/grid"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginBottom="40dp"-->
+        <!--android:layout_marginTop="300dp"-->
+        <!--android:background="#FFFFFF"-->
+        <!--android:gravity="center"-->
+        <!--android:horizontalSpacing="4dip"-->
+        <!--android:numColumns="3"-->
+        <!--android:padding="4dip"-->
+        <!--android:stretchMode="columnWidth"-->
+        <!--android:verticalSpacing="4dip"-->
+
+        <!--/>-->
 
 
     <SearchView

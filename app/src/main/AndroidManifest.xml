@@ -86,13 +86,17 @@
         <activity
             android:name=".PostActivity"
             android:label="@string/title_activity_post"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.lidong.photopicker.PhotoPickerActivity"
-            android:theme="@style/PhotoPickerTheme"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name="com.lidong.photopicker.PhotoPreviewActivity"
-            android:theme="@style/PhotoPickerTheme"/>
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity
+            android:name="com.lidong.photopicker.PhotoPreviewActivity"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity
+            android:name=".RestaurantActivity"
+            android:label="@string/title_activity_restaurant"></activity>
     </application>
 
 </manifest>

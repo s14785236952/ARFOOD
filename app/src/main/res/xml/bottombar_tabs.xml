@@ -4,11 +4,13 @@
         <tab
             id="@+id/tab_explore"
             icon="@drawable/explore_tab"
+            inActiveColor="#BDBDBD"
             activeColor="#FF627E"/>
         <tab
             id="@+id/tab_recommend"
             icon="@drawable/recommend_tab"
             activeColor="#FF627E"
+            inActiveColor="#BDBDBD"
             />
         <tab
             id="@+id/tab_blank"
@@ -18,10 +20,12 @@
             id="@+id/tab_favorite"
             icon="@drawable/list_tab"
             activeColor="#FF627E"
+            inActiveColor="#BDBDBD"
             />
         <tab
             id="@+id/tab_account"
             icon="@drawable/account_tab"
+            inActiveColor="#BDBDBD"
             activeColor="#FF627E"
             />
     </tabs>
