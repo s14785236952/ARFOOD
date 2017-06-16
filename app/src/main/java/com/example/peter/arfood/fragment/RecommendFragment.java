@@ -75,19 +75,18 @@ public class RecommendFragment extends Fragment {
 
 
                 }
+                setViewInfo(R.drawable.noodle,  R.drawable.star2, 0);
             }
+
         };
         restClient.setCallback(callback);
-
-        setViewInfo(R.drawable.noodle,  R.drawable.star1, 0);
-
         return v;
     }
 
     private View.OnClickListener No1btnOnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            setViewInfo(R.drawable.noodle,  R.drawable.star1, 0);
+            setViewInfo(R.drawable.noodle,  R.drawable.star2, 0);
         }
     };
     private View.OnClickListener No2btnOnClick = new View.OnClickListener() {
@@ -108,11 +107,10 @@ public class RecommendFragment extends Fragment {
             setViewInfo(R.drawable.foodbox,  R.drawable.star4, 3);
         }
     };
-
     private View.OnClickListener No5btnOnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            setViewInfo(R.drawable.ice,  R.drawable.star5, 4);
+            setViewInfo(R.drawable.ice,  R.drawable.star4, 4);
         }
     };
 
@@ -132,7 +130,6 @@ public class RecommendFragment extends Fragment {
         TextView open = (TextView) v.findViewById(R.id.opening_hours);
         open.setText(""+recommendResults_opening_hours.get(index));
     }
-
     @Override
     public void onResume() {
         super.onResume();
